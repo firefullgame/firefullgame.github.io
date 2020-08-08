@@ -25,7 +25,7 @@ export const ticket = {
 	getFPTBalanceError: '获取FPT余额错误',
 	getInvitBalanceError: '获取奖励错误',
 	getBuyerLogError: '获取购买记录错误',
-	getInvitBuyLogError: '获取推荐记录错误',
+	getInvitBuyLogError: '获取邀请记录错误',
 	transactionFaild: '交易失败',
 	sendTransactionConfirmed: '发送交易成功',
 	surplus: '剩余量',
