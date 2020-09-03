@@ -4,9 +4,6 @@ export const index = {
 	game: 'ゲーム',
 	overview: '総覧' 
 }
-export const overview = {
-	
-}
 export const ticket = {
 	hold: 'ホールド',
 	quickBuy: 'クイック購入',
@@ -15,8 +12,9 @@ export const ticket = {
 	changeNow: '今すぐ変更',
 	transactionConfirmed:'トランザクションが確認されました',
 	exceedingTheMaximumPurchaseQuantity: '最大購入数量を超える',
-	minimumPurchase: '少なくとも買う',
-	pleaseInputETHQuantity:'ETH量を入力してください',
+	subscriptionRatio: '募集比率',
+	subscriptionEnd: '募集終了',
+	pleaseInputETHQuantity:'TRX量を入力してください',
 	awardReceived: '受賞歴',
 	withdraw: '回収する',
 	buyLog: 'レコード購入',
@@ -30,6 +28,19 @@ export const ticket = {
 	transactionFaild: 'トランザクション失敗',
 	sendTransactionConfirmed: 'トランザクションの確認',
 	surplus: '余剰',
+	theAddressSendCannotBeYourOwn:'アドレスを送信することはできませんあなた自身',
+	failInSend:'送信失敗',
+	cannotBeEmpty:'空きできない',
+	insufficientQuantity:'不十分量',
+	address:'アドレス',
+	num:'番号',
+	send:'送付する',
+	addressOfTheOther:'他のアドレス',
+	quantitySend:'数量送信',
+	cancel:'取り消し',
+	pleaseEnterTheAddressOfTheOtherParty:'アドレスを入力してください',
+	pleaseEnterTheQuantityToSend:'数量入力',
+	sendLog:'ログを送信する',
 }
 export const indexs = {
 	fireIsOnDreamsNeverGoOut:'火は夢にある',
@@ -37,12 +48,74 @@ export const indexs = {
 	destroyed: '破壊',
 	gameProgress: 'ゲーム進行',
 	didNotOpen: '開かなかった',
-	grandPrizePoolAccumulation: 'プール賞',
+	totalParticipationInTheGame: '試合への参加',
 	myInviter: '私の招待',
 	myInvitationLink: '招待リンク',
 	copy: 'コピー',
 	beginToCopy: 'コピー成功',
+	issue :  '第{0}期',
+}
+export const overview = {
+	invitationLink: '招待リンク',
+	drawGameRevenue: '抽選ゲーム収入',
+	withdrawalOfNodeIncome: '節点の脱退',
+	gameParticipationProgress: '参加進捗',
+	numberOfParticipants:'参加者数',
+	revenueEarned:'収入',
+	revenueCap:'収益キャップ',
+	reserveFund:'Reserve Fund',
+	numberOfSharedPlayers:'共有プレイヤー',
+	teamParameters:'チームパラメータ',
+	gameRevenue:'ゲーム収入',
+	shareInTheProfit:'利益',
+	undrawnEarnings:'無記名収益',
+	gameStatus:'ゲームステータス',
+	noParticipation:'なし参加',
+	prizePool:'賞プール',
+	ticketRecords:'チケット記録',
+	purchaseRecords:'購入記録',
+	refundRecord:'払い戻し記録',
+	commissionWithdrawalRecord:'委員会記録',
+	gameRecord:'ゲーム記録',
+	recommendationRecord:'推奨レコード記録',
+	participationRecord:'参加記録',
+	winningRecord:'勝利記録',
+	revenueWithdrawalRecord:'引退記録',
+	superNodeRevenueRecord:'スーパーノード収益記録',
+	addressBalance: 'アドレスバランス',
+	withdrawalFailed: '引き出しに失敗しました',
+	withdrawalSuccessful: '成功した引き出し',
+}
+export const game = {
+	maximumPurchase: '最大限購入',
+	eachParticipationInEthRequires: 'ETH要求における参加',
+	jackpot: 'ジャックポット',
+	prizeDrawingProgress: '進歩',
+	destroyedTicket: '破壊切符',
+	rapidParticipation: '急速な参加',
+	numberOfParticipants: '参加者数',
+	pleaseInputEthQuantity: 'ETH量を入力してください',
+	instantInvolvement: 'インスタント関与',
+	need: '必要',
+	participationRecord: '参加記録',
+	invitationRecord : '招待記録',
+	participation : '参加',
+	notOpenedYet: 'まだオープンしていない',
+}
+export const event = {
+	noData: 'データなし',
+	networkError: 'ネットワークエラー',
+	time: '時間',
+	amount: '量',
+	number: '数',
+	referrer: 'リファラー',
+	purchasingPrice: '購入価格',
+	prizePool: '賞金プール',
+	awards: '受賞',
+	total: '合計',
 }
 export const please_use_wallet = 'imtokenやMetaMaskなどの財布を使って訪問してください。';
 export const switch_lang = 'スイッチ言語';
 export const notYetOpen = '未開';
+export const minimumPurchase= '少なくとも買う';
+export const waitingForReturn = '帰りを待つ';

@@ -4,7 +4,7 @@ export const index = {
 	game: '游戏',
 	overview: '总览',
 
-	
+
 }
 export const ticket = {
 	hold: '现有',
@@ -12,10 +12,11 @@ export const ticket = {
 	needPay: '需支付',
 	receive: '可获得',
 	changeNow: '立即兑换',
-	transactionConfirmed:'交易确认',
+	transactionConfirmed: '交易确认',
 	exceedingTheMaximumPurchaseQuantity: '超过最大购买量',
-	minimumPurchase: '最少购买',
-	pleaseInputETHQuantity:'请输入ETH数量',
+	subscriptionRatio: '兑换比例',
+	subscriptionEnd: '兑换结束',
+	pleaseInputETHQuantity: '请输入TRX数量',
 	awardReceived: '已获得奖励',
 	withdraw: '提现',
 	buyLog: '购买记录',
@@ -27,26 +28,99 @@ export const ticket = {
 	getBuyerLogError: '获取购买记录错误',
 	getInvitBuyLogError: '获取邀请记录错误',
 	transactionFaild: '交易失败',
-	sendTransactionConfirmed: '发送交易成功',
+	sendTransactionConfirmed: '发送交易成功，等待确认',
 	surplus: '剩余量',
-	
-	
+	theAddressSendCannotBeYourOwn:'发送的地址不能是自己的',
+	failInSend:'发送失败',
+	cannotBeEmpty:'不能为空',
+	insufficientQuantity:'数量不足',
+	address:'地址',
+	num:'数量',
+	send:'发送',
+	addressOfTheOther:'对方地址',
+	quantitySend:'发送数量',
+	cancel:'取消',
+	pleaseEnterTheAddressOfTheOtherParty:'请输入对方地址',
+	pleaseEnterTheQuantityToSend:'请输入发送数量',
+	sendLog:'发送记录',
 }
 export const indexs = {
-	fireIsOnDreamsNeverGoOut:'火力全开,梦想永不熄火',
+	fireIsOnDreamsNeverGoOut: '火力全开,梦想永不熄火',
 	totalSell: '总售出',
 	destroyed: '已销毁',
 	gameProgress: '游戏进度',
 	didNotOpen: '未开启',
-	grandPrizePoolAccumulation: '大奖池累计',
+	totalParticipationInTheGame: '游戏总参与',
 	myInviter: '我的邀请人',
 	myInvitationLink: '我的邀请链接',
 	copy: '复制',
 	beginToCopy: '复制成功',
+	issue: '第{0}期',
+
 }
 export const overview = {
-	
+	invitationLink: '邀请链接',
+	drawGameRevenue: '提取游戏收益',
+	withdrawalOfNodeIncome: '提取节点收益',
+	gameParticipationProgress: '游戏参与进度',
+	numberOfParticipants: '参与数量',
+	revenueEarned: '已获取收益',
+	revenueCap: '收益封顶',
+	reserveFund: '预备金',
+	numberOfSharedPlayers: '分享玩家数',
+	teamParameters: '团队参数量',
+	gameRevenue: '游戏收益',
+	shareInTheProfit: '分享收益',
+	undrawnEarnings: '未提取收益',
+	gameStatus: '游戏状态',
+	noParticipation: '未参与',
+	prizePool: '夺宝奖池',
+	ticketRecords: '门票记录',
+	purchaseRecords: '购买记录',
+	refundRecord: '返佣记录',
+	commissionWithdrawalRecord: '佣金提取记录',
+	gameRecord: '游戏记录',
+	recommendationRecord: '推荐记录',
+	participationRecord: '参与记录',
+	winningRecord: '中奖记录',
+	revenueWithdrawalRecord: '收益提取记录',
+	superNodeRevenueRecord: '超级节点收益记录',
+	addressBalance: '地址余额',
+	withdrawalFailed: '提现失败',
+	withdrawalSuccessful: '提现成功',
+}
+export const game = {
+	maximumPurchase: '最多使用',
+	eachParticipationInEthRequires: '每参与2000TRX需',
+	jackpot: '奖池',
+	prizeDrawingProgress: '开奖进度',
+	destroyedTicket: '已销毁门票数',
+	rapidParticipation: '快速参与',
+	numberOfParticipants: '参与数量',
+	pleaseInputEthQuantity: '请输入ETH数量',
+	instantInvolvement: '立即参与',
+	need: '需',
+	participationRecord: '参与记录',
+	invitationRecord: '邀请记录',
+	participation: '参与',
+	notOpenedYet: '暂未开启',
+}
+export const event = {
+	noData: '暂无数据',
+	networkError: '网络错误',
+	time: '时间',
+	amount: '金额',
+	number: '数量',
+	referrer: '推荐人',
+	purchasingPrice: '购买金额',
+	prizePool: '奖池',
+	awards: '奖项',
+	total: '总数',
 }
 export const please_use_wallet = '请使用imtoken或MetaMask等钱包访问';
 export const switch_lang = '切换语言';
 export const notYetOpen = '暂未开放';
+export const minimumPurchase = '最少购买';
+export const waitingForReturn = '等待返回';
+export const transactionConfirmed = '交易已确认';
+

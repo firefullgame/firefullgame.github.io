@@ -4,9 +4,6 @@ export const index = {
 	game: '게임',
 	overview: '총람 하 다'
 }
-export const overview = {
-	
-}
 export const ticket = {
 	hold: '소유 하 다',
 	quickBuy: '빠 른 구 매',
@@ -15,8 +12,10 @@ export const ticket = {
 	changeNow: '즉시 교환',
 	transactionConfirmed:'거래 확인',
 	exceedingTheMaximumPurchaseQuantity: '최대 구 매 량 초과',
-	minimumPurchase: '최소 구 매',
-	pleaseInputETHQuantity:'ETH 수량 을 입력 하 세 요',
+	subscriptionRatio: '청 약 비율',
+	subscriptionEnd: '구독 이 끝나다',
+	awardReceived: 'Received',
+	pleaseInputETHQuantity:'TRX 수량 을 입력 하 세 요',
 	awardReceived: '받 은 보상',
 	withdraw: '철수 하 다',
 	buyLog: '구 매 기록',
@@ -30,6 +29,19 @@ export const ticket = {
 	transactionFaild: '트 랜 잭 션 실패',
 	sendTransactionConfirmed: '거래 확인 발송',
 	surplus: '잉여',
+	theAddressSendCannotBeYourOwn:'보 내주 신 주 소 는 본인 것 이 아 닙 니 다.',
+	failInSend:'발송 실패',
+	cannotBeEmpty:'헛 되 어 서 는 안 된다',
+	insufficientQuantity:'수량 이 부족 하 다',
+	address:'주소.',
+	num:'번호.',
+	send:'발송 하 다.',
+	addressOfTheOther:'상대 주소',
+	quantitySend:'발송 수량',
+	cancel:'취소 하 다.',
+	pleaseEnterTheAddressOfTheOtherParty:'주 소 를 입력 하 세 요',
+	pleaseEnterTheQuantityToSend:'수량 을 입력 하 세 요',
+	sendLog:'일 지 를 보내다',
 }
 export const indexs = {
 	fireIsOnDreamsNeverGoOut:'불 은 꿈속 에서 영원히 꺼 지지 않 는 다',
@@ -37,12 +49,74 @@ export const indexs = {
 	destroyed: '파괴 하 다',
 	gameProgress: '게임 진행',
 	didNotOpen: '열 리 지 않 음',
-	grandPrizePoolAccumulation: '대상 누적',
+	totalParticipationInTheGame: '총 관여 도',
 	myInviter: '나의 초대 자',
 	myInvitationLink: '나의 초대 링크',
 	copy: '복제하다',
 	beginToCopy: '복사 성공',
+	issue :  '제 {0} 기',
+}
+export const overview = {
+	invitationLink: '초대 링크',
+	drawGameRevenue: '게임 수입 뽑 기',
+	withdrawalOfNodeIncome: '노드 수입 추출',
+	gameParticipationProgress: '참여 진도',
+	numberOfParticipants:'참가 인원',
+	revenueEarned:'수입.',
+	revenueCap:'수입 상한 선',
+	reserveFund:'예비 기금',
+	numberOfSharedPlayers:'공유 유저',
+	teamParameters:'그룹 매개 변수',
+	gameRevenue:'게임 수입',
+	shareInTheProfit:'이윤 을 배당 하 다.',
+	undrawnEarnings:'미 추출 수익',
+	gameStatus:'게임 상태',
+	noParticipation:'불 참',
+	prizePool:'상금',
+	ticketRecords:'표 무 기록',
+	purchaseRecords:'구 매 기록',
+	refundRecord:'환불 기록',
+	commissionWithdrawalRecord:'공제금 기록',
+	gameRecord:'게임 기록',
+	recommendationRecord:'추천 기록',
+	participationRecord:'참여 기록',
+	winningRecord:'수상 기록',
+	revenueWithdrawalRecord:'인출 기록',
+	superNodeRevenueRecord:'슈퍼 노드 수입 기록',
+	addressBalance: '주소 잔액',
+	withdrawalFailed: '출금 실패',
+	withdrawalSuccessful: '출금 성공',
+}
+export const game = {
+	maximumPurchase: '최대 구 매 량',
+	eachParticipationInEthRequires: '참여 ET',
+	jackpot: '일등상.',
+	prizeDrawingProgress: '상품 진행',
+	destroyedTicket: '파 손 된 차표',
+	rapidParticipation: '빠 른 참여',
+	numberOfParticipants: '참가 인원',
+	pleaseInputEthQuantity: 'Eth 수량 을 입력 하 세 요',
+	instantInvolvement: '즉시 참여 하 다.',
+	need: '필요 하 다.',
+	participationRecord: '참여 기록',
+	invitationRecord : '요청 레코드',
+	participation : '참여 하 다',
+	notOpenedYet: '아직 오픈 하지 않 음',
+}
+export const event = {
+	noData: '데이터 없음',
+	networkError: '네트워크 오류',
+	time: '시각',
+	amount: '양',
+	number: '번호',
+	referrer: '추천인',
+	purchasingPrice: '구매 가격',
+	prizePool: '상금',
+	awards: '수상',
+	total: '합계',
 }
 export const please_use_wallet = 'imtoken 이나 Metamask 등 지갑 으로 방문 해 주세요.';
 export const switch_lang = '언어 전환';
 export const notYetOpen = '아직 오픈 하지 않 았 습 니 다';
+export const minimumPurchase= '최소 구 매';
+export const waitingForReturn = '귀환 을 기다리다';
