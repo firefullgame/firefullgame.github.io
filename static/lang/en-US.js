@@ -1,6 +1,6 @@
 export const index = {
 	info: 'Info',
-	ticket: 'Ticket',
+	ticket: 'Fuel',
 	game: 'Game',
 	overview: 'Overview'
 }
@@ -8,9 +8,9 @@ export const index = {
 export const ticket = {
 	hold: 'Balance',
 	quickBuy: 'Quick Change',
-	needPay: 'Pay',
-	receive: 'Receive',
-	changeNow: 'Change Now',
+	needPay: 'Assets To Be Paid',
+	receive: 'Fuel Available',
+	changeNow: 'Map Now',
 	transactionConfirmed: 'Transaction Confirmed',
 	exceedingTheMaximumPurchaseQuantity: 'Exceeding The Maximum Purchase Quantity',
 	subscriptionRatio: 'Subscription Ratio',
@@ -18,7 +18,7 @@ export const ticket = {
 	pleaseInputETHQuantity: 'Please Input TRX Quantity',
 	awardReceived: 'Received',
 	withdraw: 'Withdraw',
-	buyLog: 'Buy Record',
+	buyLog: 'Mapping Records',
 	invitLog: 'Invit Record',
 	getPriceError: 'Get Price Error',
 	getWholesaleError: 'Get Maximum Quantity Error',
@@ -45,11 +45,11 @@ export const ticket = {
 }
 export const indexs = {
 	fireIsOnDreamsNeverGoOut: 'Fire Is On Dreams, Never Go Out',
-	totalSell: 'Total Sell',
-	destroyed: 'Destroyed',
-	gameProgress: 'Game Progress',
+	totalSell: 'Total mapping fuel',
+	destroyed: 'Burned fuel',
+	gameProgress: 'Smart contract trigger progress',
 	didNotOpen: 'Did Not Open',
-	totalParticipationInTheGame: 'Total Participation In The Game',
+	totalParticipationInTheGame: 'Total admission',
 	myInviter: 'My Inviter',
 	myInvitationLink: 'My Invitation Link',
 	copy: 'Copy',
@@ -58,9 +58,9 @@ export const indexs = {
 }
 export const overview = {
 	invitationLink: 'Invit Link',
-	drawGameRevenue: 'Draw Game Revenue',
+	drawGameRevenue: 'Export Rame Revenue',
 	withdrawalOfNodeIncome: 'Withdrawal Of Node Income',
-	gameParticipationProgress: 'Participation Progress',
+	gameParticipationProgress: 'Game Participation Progress',
 	numberOfParticipants: 'Participants Number',
 	revenueEarned: 'Revenue Earned',
 	revenueCap: 'Revenue Cap',
@@ -74,15 +74,15 @@ export const overview = {
 	noParticipation: 'No Participation',
 	prizePool: 'Prize Pool',
 	ticketRecords: 'Ticket Records',
-	purchaseRecords: 'Purchase Records',
-	refundRecord: 'Refund Record',
-	commissionWithdrawalRecord: 'commission Withdrawal Record',
+	purchaseRecords: 'Mapping Records',
+	refundRecord: 'Share Reward Records',
+	commissionWithdrawalRecord: 'Distribution records',
 	gameRecord: 'Game Record',
 	recommendationRecord: 'Recommend Record',
 	participationRecord: 'Participation Record',
 	winningRecord: 'Winning Record',
 	revenueWithdrawalRecord: 'Rvenue Withdrawal Record',
-	superNodeRevenueRecord: 'Super Node Revenue Record',
+	superNodeRevenueRecord: 'Super player revenue record',
 	addressBalance: 'Address Balance',
 	withdrawalFailed: 'Withdrawal Failed',
 	withdrawalSuccessful: 'Withdrawal Successful',
@@ -92,16 +92,16 @@ export const game = {
 	eachParticipationInEthRequires: 'Participation In Eth',
 	jackpot: 'Jackpot',
 	prizeDrawingProgress: 'Prize Progress',
-	destroyedTicket: 'Destroyed Ticket',
+	destroyedTicket: 'Value Of Burned Fuel',
 	rapidParticipation: 'Rapid Participation',
 	numberOfParticipants: 'Participants Number',
 	pleaseInputEthQuantity: 'Please Input Eth Quantity',
 	instantInvolvement: 'Instant Involvement',
-	need: 'Need',
+	need: 'Fuel Ratio Required',
 	participationRecord: 'Participation Record',
 	invitationRecord: 'Invitation Record',
 	participation: 'Participation',
-	notOpenedYet: 'Not Opened Yet',
+	notOpenedYet: 'To Be Triggered',
 }
 export const event = {
 	noData: 'No Data',
@@ -114,6 +114,8 @@ export const event = {
 	prizePool: 'Prize Pool',
 	awards: 'Awards',
 	total: 'Total',
+	level: 'level',
+	reward: 'reward',
 }
 export const please_use_wallet = 'Please use wallet such as imtoken or metamask to access';
 export const switch_lang = 'switch language';

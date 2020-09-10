@@ -1,15 +1,15 @@
 export const index = {
 	info: '소개 하 다',
-	ticket: '입장권',
+	ticket: '연료.',
 	game: '게임',
 	overview: '총람 하 다'
 }
 export const ticket = {
 	hold: '소유 하 다',
 	quickBuy: '빠 른 구 매',
-	needPay: '지급 이 필요 하 다',
-	receive: '획득 가능',
-	changeNow: '즉시 교환',
+	needPay: '지급 자산',
+	receive: '연료 획득 가능',
+	changeNow: '즉시 매 핑',
 	transactionConfirmed:'거래 확인',
 	exceedingTheMaximumPurchaseQuantity: '최대 구 매 량 초과',
 	subscriptionRatio: '청 약 비율',
@@ -45,11 +45,11 @@ export const ticket = {
 }
 export const indexs = {
 	fireIsOnDreamsNeverGoOut:'불 은 꿈속 에서 영원히 꺼 지지 않 는 다',
-	totalSell: '판매 총액',
-	destroyed: '파괴 하 다',
-	gameProgress: '게임 진행',
+	totalSell: '총 매 핑 연료',
+	destroyed: '이미 연료 를 태 웠 다',
+	gameProgress: '지능 계약 트리거 진도',
 	didNotOpen: '열 리 지 않 음',
-	totalParticipationInTheGame: '총 관여 도',
+	totalParticipationInTheGame: '입장 총량',
 	myInviter: '나의 초대 자',
 	myInvitationLink: '나의 초대 링크',
 	copy: '복제하다',
@@ -58,7 +58,7 @@ export const indexs = {
 }
 export const overview = {
 	invitationLink: '초대 링크',
-	drawGameRevenue: '게임 수입 뽑 기',
+	drawGameRevenue: '게임 수익 내 보 내기',
 	withdrawalOfNodeIncome: '노드 수입 추출',
 	gameParticipationProgress: '참여 진도',
 	numberOfParticipants:'참가 인원',
@@ -68,21 +68,21 @@ export const overview = {
 	numberOfSharedPlayers:'공유 유저',
 	teamParameters:'그룹 매개 변수',
 	gameRevenue:'게임 수입',
-	shareInTheProfit:'이윤 을 배당 하 다.',
+	shareInTheProfit:'수익 을 배당 하 다',
 	undrawnEarnings:'미 추출 수익',
 	gameStatus:'게임 상태',
 	noParticipation:'불 참',
 	prizePool:'상금',
-	ticketRecords:'표 무 기록',
+	ticketRecords:'연료 기록',
 	purchaseRecords:'구 매 기록',
-	refundRecord:'환불 기록',
+	refundRecord:'매 핑 기록',
 	commissionWithdrawalRecord:'공제금 기록',
 	gameRecord:'게임 기록',
 	recommendationRecord:'추천 기록',
 	participationRecord:'참여 기록',
 	winningRecord:'수상 기록',
 	revenueWithdrawalRecord:'인출 기록',
-	superNodeRevenueRecord:'슈퍼 노드 수입 기록',
+	superNodeRevenueRecord:'슈퍼 유저 수익 기록',
 	addressBalance: '주소 잔액',
 	withdrawalFailed: '출금 실패',
 	withdrawalSuccessful: '출금 성공',
@@ -114,6 +114,8 @@ export const event = {
 	prizePool: '상금',
 	awards: '수상',
 	total: '합계',
+	level: '위치.',
+	reward: '장려 하 다.',
 }
 export const please_use_wallet = 'imtoken 이나 Metamask 등 지갑 으로 방문 해 주세요.';
 export const switch_lang = '언어 전환';

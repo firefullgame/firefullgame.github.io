@@ -20,6 +20,25 @@
 	},
 	{
 		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "nomalList",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
 		"inputs": [],
 		"name": "totalJoin",
 		"outputs": [
@@ -44,39 +63,6 @@
 		"outputs": [],
 		"payable": true,
 		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "currentPlayerList",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "currentJoin",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -179,6 +165,20 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "nomalListIndex",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "retainScale",
 		"outputs": [
 			{
@@ -207,35 +207,7 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "currentPlayerHead",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
 		"name": "nextBurn",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "currentRound",
 		"outputs": [
 			{
 				"name": "",
@@ -543,6 +515,10 @@
 				"type": "uint256"
 			},
 			{
+				"name": "nomalMax",
+				"type": "uint256"
+			},
+			{
 				"name": "totalProfit",
 				"type": "uint256"
 			},
@@ -560,10 +536,6 @@
 			},
 			{
 				"name": "recommand",
-				"type": "uint256"
-			},
-			{
-				"name": "index",
 				"type": "uint256"
 			},
 			{
@@ -609,42 +581,6 @@
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "myInvitList",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address[]"
-			},
-			{
-				"name": "",
-				"type": "address"
-			},
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "currentPlayerIndex",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -743,7 +679,7 @@
 				"type": "uint256"
 			}
 		],
-		"name": "ProfitRewardEvent",
+		"name": "ProfitEvent",
 		"type": "event"
 	},
 	{

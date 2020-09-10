@@ -1,6 +1,6 @@
 export const index = {
 	info: 'сведения', 
-	ticket: 'билет', 
+	ticket: 'топливо', 
 	game: 'игра', 
 	overview: 'обзор'
 }
@@ -8,9 +8,9 @@ export const index = {
 export const ticket = {
 	hold: 'наличный',
 	quickBuy: 'быстрая покупка',
-	needPay: 'подлежать оплате',
-	receive: 'доступный',
-	changeNow: 'немедленная конверсия',
+	needPay: 'подлежащие оплате активы',
+	receive: 'доступное топливо',
+	changeNow: 'прямое отображение',
 	transactionConfirmed:'подтверждение сделки',
 	exceedingTheMaximumPurchaseQuantity: 'превышение максимальной покупательной способности',
 	subscriptionRatio: 'процент подписки',
@@ -46,11 +46,11 @@ export const ticket = {
 }
 export const indexs = {
 	fireIsOnDreamsNeverGoOut:'огонь во сне, никогда не погаснет',
-	totalSell: 'Общая сумма продажи',
-	destroyed: 'разрушать',
-	gameProgress: 'ход игры',
+	totalSell: 'топливо общего отображения',
+	destroyed: 'сжигаемое топливо',
+	gameProgress: 'ход запуска интеллигентного контракта',
 	didNotOpen: 'не открыть',
-	totalParticipationInTheGame: 'общая степень участия',
+	totalParticipationInTheGame: 'Общее количество входов',
 	myInviter: 'мой приглашенный',
 	myInvitationLink: 'ссылка на приглашение',
 	copy: 'копировать',
@@ -59,7 +59,7 @@ export const indexs = {
 }
 export const overview = {
 	invitationLink: 'ссылка на',
-	drawGameRevenue: 'извлечение игрового дохода',
+	drawGameRevenue: 'Экспорт игровых поступлений',
 	withdrawalOfNodeIncome: 'извлечение узловых доходов',
 	gameParticipationProgress: 'Participation Progress',
 	numberOfParticipants:'ход участия',
@@ -75,15 +75,15 @@ export const overview = {
 	noParticipation:'Неучастие',
 	prizePool:'приз',
 	ticketRecords:'запись билетов',
-	purchaseRecords:'закупочная Документация',
-	refundRecord:'запись возврата',
-	commissionWithdrawalRecord:'запись отчислений',
+	purchaseRecords:'запись топлива',
+	refundRecord:'обмен премиями',
+	commissionWithdrawalRecord:'распределительная запись',
 	gameRecord:'игра рекорд',
 	recommendationRecord:'рекомендательная запись',
 	participationRecord:'запись участия',
 	winningRecord:'запись приза',
 	revenueWithdrawalRecord:'запись о снятии средств',
-	superNodeRevenueRecord:'запись поступлений суперузла',
+	superNodeRevenueRecord:'запись поступлений суперигрока',
 	addressBalance: 'Баланс адреса',
 	withdrawalFailed: 'Снятие не удалось',
 	withdrawalSuccessful: 'Вывод успешен',
@@ -115,6 +115,8 @@ export const event = {
 	prizePool: 'Призовой фонд',
 	awards: 'Награды',
 	total: 'Общее количество',
+	level: 'место',
+	reward: 'награда',
 }
 export const please_use_wallet = 'Пожалуйста, используйте imtoken или MetaMask для доступа к бумажникам';
 export const switch_lang = 'язык переключения';

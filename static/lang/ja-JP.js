@@ -1,15 +1,15 @@
 export const index = {
 	info: '紹介します',
-	ticket: '入場券',
+	ticket: '燃料',
 	game: 'ゲーム',
 	overview: '総覧' 
 }
 export const ticket = {
 	hold: 'ホールド',
 	quickBuy: 'クイック購入',
-	needPay: '支払いが必要です',
-	receive: '受信します',
-	changeNow: '今すぐ変更',
+	needPay: '資産の支払いが必要です',
+	receive: '燃料を得ることができます',
+	changeNow: '即時マッピング',
 	transactionConfirmed:'トランザクションが確認されました',
 	exceedingTheMaximumPurchaseQuantity: '最大購入数量を超える',
 	subscriptionRatio: '募集比率',
@@ -17,7 +17,7 @@ export const ticket = {
 	pleaseInputETHQuantity:'TRX量を入力してください',
 	awardReceived: '受賞歴',
 	withdraw: '回収する',
-	buyLog: 'レコード購入',
+	buyLog: 'マッピング記録',
 	invitLog: '招待レコード',
 	getPriceError: '価格エラー',
 	getWholesaleError: '最大量エラー',
@@ -44,11 +44,11 @@ export const ticket = {
 }
 export const indexs = {
 	fireIsOnDreamsNeverGoOut:'火は夢にある',
-	totalSell: '総販売',
-	destroyed: '破壊',
-	gameProgress: 'ゲーム進行',
+	totalSell: '総マッピング燃料',
+	destroyed: '燃料は焼却済み',
+	gameProgress: 'スマート契約トリガの進捗',
 	didNotOpen: '開かなかった',
-	totalParticipationInTheGame: '試合への参加',
+	totalParticipationInTheGame: '入場総量',
 	myInviter: '私の招待',
 	myInvitationLink: '招待リンク',
 	copy: 'コピー',
@@ -57,7 +57,7 @@ export const indexs = {
 }
 export const overview = {
 	invitationLink: '招待リンク',
-	drawGameRevenue: '抽選ゲーム収入',
+	drawGameRevenue: 'ゲームの収益をエクスポート',
 	withdrawalOfNodeIncome: '節点の脱退',
 	gameParticipationProgress: '参加進捗',
 	numberOfParticipants:'参加者数',
@@ -75,7 +75,7 @@ export const overview = {
 	ticketRecords:'チケット記録',
 	purchaseRecords:'購入記録',
 	refundRecord:'払い戻し記録',
-	commissionWithdrawalRecord:'委員会記録',
+	commissionWithdrawalRecord:'レコードの割り当て',
 	gameRecord:'ゲーム記録',
 	recommendationRecord:'推奨レコード記録',
 	participationRecord:'参加記録',
@@ -113,6 +113,8 @@ export const event = {
 	prizePool: '賞金プール',
 	awards: '受賞',
 	total: '合計',
+	level: '位置',
+	reward: '報酬',
 }
 export const please_use_wallet = 'imtokenやMetaMaskなどの財布を使って訪問してください。';
 export const switch_lang = 'スイッチ言語';
