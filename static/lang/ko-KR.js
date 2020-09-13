@@ -42,6 +42,8 @@ export const ticket = {
 	pleaseEnterTheAddressOfTheOtherParty:'주 소 를 입력 하 세 요',
 	pleaseEnterTheQuantityToSend:'수량 을 입력 하 세 요',
 	sendLog:'일 지 를 보내다',
+	withdrawalIncome: '회수 하 다.',
+	available: '획득 가능'
 }
 export const indexs = {
 	fireIsOnDreamsNeverGoOut:'불 은 꿈속 에서 영원히 꺼 지지 않 는 다',
@@ -88,7 +90,6 @@ export const overview = {
 	withdrawalSuccessful: '출금 성공',
 }
 export const game = {
-	maximumPurchase: '최대 구 매 량',
 	eachParticipationInEthRequires: '참여 ET',
 	jackpot: '일등상.',
 	prizeDrawingProgress: '상품 진행',
@@ -122,3 +123,5 @@ export const switch_lang = '언어 전환';
 export const notYetOpen = '아직 오픈 하지 않 았 습 니 다';
 export const minimumPurchase= '최소 구 매';
 export const waitingForReturn = '귀환 을 기다리다';
+export const maximumPurchase = '최대 구 매 량';
+export const congratulationsToPlayerForWinningPrizeAndWinningPrizeInTotal = '플레이어 {0} 총 이 겼 다 {1} 과 {2}';

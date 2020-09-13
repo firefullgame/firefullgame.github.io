@@ -43,6 +43,8 @@ export const ticket = {
 	pleaseEnterTheAddressOfTheOtherParty:'Введите адрес',
 	pleaseEnterTheQuantityToSend:'Введите количество',
 	sendLog:'журнал отправки',
+	withdrawalIncome: 'вернуть',
+	available: 'доступный'
 }
 export const indexs = {
 	fireIsOnDreamsNeverGoOut:'огонь во сне, никогда не погаснет',
@@ -89,7 +91,6 @@ export const overview = {
 	withdrawalSuccessful: 'Вывод успешен',
 }
 export const game = {
-	maximumPurchase: 'максимальная покупательная способность',
 	eachParticipationInEthRequires: 'Участие ET',
 	jackpot: 'первый приз',
 	prizeDrawingProgress: 'ход награждения',
@@ -123,3 +124,5 @@ export const switch_lang = 'язык переключения';
 export const notYetOpen = 'пока не открыт';
 export const minimumPurchase= 'купить минимум';
 export const waitingForReturn = 'ждать возвращения';
+export const maximumPurchase = 'максимальная покупательная способность';
+export const congratulationsToPlayerForWinningPrizeAndWinningPrizeInTotal = 'Поздравляю игроков {0} с общей победой {1} и {2}';

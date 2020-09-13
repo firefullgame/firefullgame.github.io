@@ -28,19 +28,21 @@ export const ticket = {
 	transactionFaild: '交易失败',
 	sendTransactionConfirmed: '发送交易成功，等待确认',
 	surplus: '剩余量',
-	theAddressSendCannotBeYourOwn:'地址不能是自己的',
-	failInSend:'发送失败',
-	cannotBeEmpty:'不能为空',
-	insufficientQuantity:'数量不足',
-	address:'地址',
-	num:'数量',
-	send:'发送',
-	addressOfTheOther:'对方地址',
-	quantitySend:'发送数量',
-	cancel:'取消',
-	pleaseEnterTheAddressOfTheOtherParty:'请输入对方地址',
-	pleaseEnterTheQuantityToSend:'请输入发送数量',
-	sendLog:'发送记录',
+	theAddressSendCannotBeYourOwn: '地址不能是自己的',
+	failInSend: '发送失败',
+	cannotBeEmpty: '不能为空',
+	insufficientQuantity: '数量不足',
+	address: '地址',
+	num: '数量',
+	send: '发送',
+	addressOfTheOther: '对方地址',
+	quantitySend: '发送数量',
+	cancel: '取消',
+	pleaseEnterTheAddressOfTheOtherParty: '请输入对方地址',
+	pleaseEnterTheQuantityToSend: '请输入发送数量',
+	sendLog: '发送记录',
+	withdrawalIncome: '提取收益',
+	available: '可'
 }
 export const indexs = {
 	fireIsOnDreamsNeverGoOut: '火力全开,梦想永不熄火',
@@ -57,6 +59,7 @@ export const indexs = {
 
 }
 export const overview = {
+	
 	invitationLink: '邀请链接',
 	drawGameRevenue: '导出游戏收益',
 	withdrawalOfNodeIncome: '提取节点收益',
@@ -88,7 +91,6 @@ export const overview = {
 	withdrawalSuccessful: '提现成功',
 }
 export const game = {
-	maximumPurchase: '最多使用',
 	eachParticipationInEthRequires: '每参与2000TRX需',
 	jackpot: '奖池',
 	prizeDrawingProgress: '开奖进度',
@@ -121,7 +123,9 @@ export const event = {
 export const please_use_wallet = '请使用imtoken或MetaMask等钱包访问';
 export const switch_lang = '切换语言';
 export const notYetOpen = '暂未开放';
-export const minimumPurchase = '最少购买';
+export const minimumPurchase = '最少购买 ';
 export const waitingForReturn = '等待返回';
 export const transactionConfirmed = '交易已确认';
 export const assets = '资产';
+export const maximumPurchase = '最多使用 ';
+export const congratulationsToPlayerForWinningPrizeAndWinningPrizeInTotal = '恭喜玩家{0}中得{1}等奖,共获得奖金{2}';

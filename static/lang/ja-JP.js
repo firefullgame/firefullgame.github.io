@@ -41,6 +41,8 @@ export const ticket = {
 	pleaseEnterTheAddressOfTheOtherParty:'アドレスを入力してください',
 	pleaseEnterTheQuantityToSend:'数量入力',
 	sendLog:'ログを送信する',
+	withdrawalIncome: '脱退',
+	available: '利用'
 }
 export const indexs = {
 	fireIsOnDreamsNeverGoOut:'火は夢にある',
@@ -87,7 +89,6 @@ export const overview = {
 	withdrawalSuccessful: '成功した引き出し',
 }
 export const game = {
-	maximumPurchase: '最大限購入',
 	eachParticipationInEthRequires: 'ETH要求における参加',
 	jackpot: 'ジャックポット',
 	prizeDrawingProgress: '進歩',
@@ -121,3 +122,5 @@ export const switch_lang = 'スイッチ言語';
 export const notYetOpen = '未開';
 export const minimumPurchase= '少なくとも買う';
 export const waitingForReturn = '帰りを待つ';
+export const maximumPurchase = '最大限購入';
+export const congratulationsToPlayerForWinningPrizeAndWinningPrizeInTotal = '合計 {1} と {2} を獲得するためのプレーヤー {0} におめでとう';

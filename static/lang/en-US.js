@@ -29,19 +29,21 @@ export const ticket = {
 	transactionFaild: 'Transaction Faild',
 	sendTransactionConfirmed: 'Send Transaction Confirmed',
 	surplus: 'Surplus',
-	theAddressSendCannotBeYourOwn:'The Address Send Cannot Be Your Own',
-	failInSend:'Fail In Send',
-	cannotBeEmpty:'Cannot Be Empty',
-	insufficientQuantity:'Insufficient Quantity',
-	address:'Address',
-	num:'Num',
-	send:'Send',
-	addressOfTheOther:'Address Of The Other',
-	quantitySend:'Quantity Send',
-	cancel:'Cancel',
-	pleaseEnterTheAddressOfTheOtherParty:'Please Enter Address',
-	pleaseEnterTheQuantityToSend:'Please Enter Quantity',
-	sendLog:'Send Log',
+	theAddressSendCannotBeYourOwn: 'The Address Send Cannot Be Your Own',
+	failInSend: 'Fail In Send',
+	cannotBeEmpty: 'Cannot Be Empty',
+	insufficientQuantity: 'Insufficient Quantity',
+	address: 'Address',
+	num: 'Num',
+	send: 'Send',
+	addressOfTheOther: 'Address Of The Other',
+	quantitySend: 'Quantity Send',
+	cancel: 'Cancel',
+	pleaseEnterTheAddressOfTheOtherParty: 'Please Enter Address',
+	pleaseEnterTheQuantityToSend: 'Please Enter Quantity',
+	sendLog: 'Send Log',
+	withdrawalIncome: 'Withdrawal In Come',
+	available: 'available'
 }
 export const indexs = {
 	fireIsOnDreamsNeverGoOut: 'Fire Is On Dreams, Never Go Out',
@@ -88,7 +90,7 @@ export const overview = {
 	withdrawalSuccessful: 'Withdrawal Successful',
 }
 export const game = {
-	maximumPurchase: 'Maximum Purchase',
+
 	eachParticipationInEthRequires: 'Participation In Eth',
 	jackpot: 'Jackpot',
 	prizeDrawingProgress: 'Prize Progress',
@@ -122,3 +124,5 @@ export const switch_lang = 'switch language';
 export const notYetOpen = 'Not Yet Open';
 export const minimumPurchase = 'Minimum Purchase';
 export const waitingForReturn = 'Waiting For Return';
+export const maximumPurchase = 'Maximum Purchase';
+export const congratulationsToPlayerForWinningPrizeAndWinningPrizeInTotal = 'Congratulations to player {0} for winning {1} and {2} in total';
