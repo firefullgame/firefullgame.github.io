@@ -43,7 +43,9 @@ export const ticket = {
 	pleaseEnterTheQuantityToSend: 'Please Enter Quantity',
 	sendLog: 'Send Log',
 	withdrawalIncome: 'Withdrawal In Come',
-	available: 'available'
+	available: 'available',
+	becomeNode: 'Become Node',
+	becomeNodeTips: 'Please confirm to map {0} TRX to 300000 FPT. After mapping, FPT will not be sent to your account. Your FPT will be automatically deposited into the contract fund pool. When other users map FPT, you can get mapping income. At the same time, you will get super node game privileges.',
 }
 export const indexs = {
 	fireIsOnDreamsNeverGoOut: 'Fire Is On Dreams, Never Go Out',

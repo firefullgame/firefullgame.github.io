@@ -42,7 +42,9 @@ export const ticket = {
 	pleaseEnterTheQuantityToSend: '请输入发送数量',
 	sendLog: '发送记录',
 	withdrawalIncome: '提取收益',
-	available: '可'
+	available: '可',
+	becomeNode: '成为节点',
+	becomeNodeTips: '请确认映射{0}TRX至300000FPT，映射完成后FPT不会发送至您的账户，您的FPT将自动存入合约资金池，当其他用户映射FPT后，您可获得映射收益。同时您将获得超级节点游戏特权。',
 }
 export const indexs = {
 	fireIsOnDreamsNeverGoOut: '火力全开,梦想永不熄火',
