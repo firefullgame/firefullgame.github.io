@@ -52,12 +52,14 @@ export const ticket = {
 	becomeNodeTips2: 'マッピング後、自動的にスマート契約実行に転送されます',
 	becomeNodeTips3: '1 .燃料マッピング永久平均配当金収入',
 	becomeNodeTips4: '2 .ネットワーク全体の5 %平均配当金収入',
+	becomeNodeTips5: '3 .すぐにノード累積所得',
 	contractFuelShortage: 'スマート契約燃料不足',
 	insufficientBalance: '不十分なバランス',
 	smartContractTimeoutPleaseTryAgain : 'スマート契約タイムアウト、再度お試しください',
 	insufficientServiceChargePleaseReserveEnoughTRX : '不十分なサービス料、十分なTRX',
 	superNodeRevenue : 'スーパーノード収入',
 	noIncomeToBeDrawn : '引当金なし',
+	superNode: 'スーパーノード',
 }
 export const indexs = {
 	fireIsOnDreamsNeverGoOut: '火は、夢は出て行く',

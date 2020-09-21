@@ -52,12 +52,14 @@ export const ticket = {
 	becomeNodeTips2: '맵 후, FPT 는 자동 으로 스마트 계약 수행 으로 전환',
 	becomeNodeTips3: '일연료 제도 영구 평균 배당금 수입',
 	becomeNodeTips4: '이전 네트워크 평균 배당 수입 5%',
+	becomeNodeTips5: '3 .すぐにノード累積所得 {0}',
 	contractFuelShortage: '지능 계약 연료 부족',
 	insufficientBalance: '잔고 가 부족 하 다',
 	smartContractTimeoutPleaseTryAgain : '스마트 계약 시간 초과, 다시 시도 해 주세요.',
 	insufficientServiceChargePleaseReserveEnoughTRX : '서비스 비용 부족, 충분 한 TRX 를 예약 하 세 요',
 	superNodeRevenue : '슈퍼 노드 수입',
 	noIncomeToBeDrawn : '수령 가능 한 수입 이 없습니다',
+	superNode: 'スーパーノード',
 }
 export const indexs = {
 	fireIsOnDreamsNeverGoOut: '난 롯 불 이 활활 타 오 르 고, 꿈 은 영원히 꺼 지지 않 는 다.',

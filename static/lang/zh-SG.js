@@ -52,12 +52,14 @@ export const ticket = {
 	becomeNodeTips2: '映射完成后FPT将自动转入智能合约执行',
 	becomeNodeTips3: '1.燃料映射永久平均分红收益',
 	becomeNodeTips4: '2.全网业绩5%平均分红收益',
+	becomeNodeTips5: '3.立即获得节点累计收益 {0} TRX',
 	contractFuelShortage: '智能合约燃料不足',
 	insufficientBalance: '余额不足',
 	smartContractTimeoutPleaseTryAgain : '智能合约超时，请重试',
 	insufficientServiceChargePleaseReserveEnoughTRX : '手续费不足，请预留足量TRX',
 	superNodeRevenue : '超级节点收益',
 	noIncomeToBeDrawn : '暂无可提取收益',
+	superNode: '超级节点',
 }
 export const indexs = {
 	fireIsOnDreamsNeverGoOut: '火力全开,梦想永不熄火',

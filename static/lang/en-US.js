@@ -52,12 +52,14 @@ export const ticket = {
 	becomeNodeTips2: 'After Mapping, FPT Will Be Automatically Transferred To Smart Contract Execution',
 	becomeNodeTips3: '1. Fuel Mapping Permanent Average Dividend Income',
 	becomeNodeTips4: '2. 5% Average Dividend Income Of The Whole Network',
+	becomeNodeTips5: '3. Obtain node cumulative income {0} TRX immediately',
 	contractFuelShortage: 'Smart Contract Fuel Shortage',
 	insufficientBalance: 'Insufficient Balance',
 	smartContractTimeoutPleaseTryAgain : 'Smart Contract Timeout , Please Try Again',
 	insufficientServiceChargePleaseReserveEnoughTRX : 'Insufficient Service Charge ,Please Reserve Enough TRX',
 	superNodeRevenue : 'Super Node Revenue',
 	noIncomeToBeDrawn : 'No Income To Be Drawn',
+	superNode: 'Super Node',
 }
 export const indexs = {
 	fireIsOnDreamsNeverGoOut: 'Fire Is On, Dreams Never Go Out',
@@ -113,7 +115,7 @@ export const game = {
 	prizeDrawingProgress: 'Prize Progress',
 	destroyedTicket: 'Burned Fuel',
 	rapidParticipation: 'Rapid Participation',
-	numberOfParticipants: 'Number Of Participating Assets',
+	numberOfParticipants: 'Participating Assets',
 	pleaseInputEthQuantity: 'Please Enter TRX Quantity',
 	instantInvolvement: 'Get Involved Now',
 	need: 'Fuel Ratio Required',
