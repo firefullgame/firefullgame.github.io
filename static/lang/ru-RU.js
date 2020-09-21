@@ -8,7 +8,7 @@ export const index = {
 export const ticket = {
 	hold: 'наличный',
 	quickBuy: 'быстрая покупка',
-	needPay: 'подлежащие оплате активы',
+	needPay: 'подлежащие оплате',
 	receive: 'доступное топливо',
 	changeNow: 'прямое отображение',
 	transactionConfirmed: 'подтверждение сделки',
@@ -72,7 +72,7 @@ export const indexs = {
 }
 export const overview = {
 	invitationLink: 'ссылка на',
-	drawGameRevenue: 'Экспорт игровых поступлений',
+	drawGameRevenue: 'поступлений',
 	withdrawalOfNodeIncome: 'извлечение узловых доходов',
 	gameParticipationProgress: 'Participation Progress',
 	numberOfParticipants: 'ход участия',
@@ -103,8 +103,8 @@ export const overview = {
 }
 export const game = {
 	eachParticipationInEthRequires: 'Участие ET',
-	jackpot: 'первый приз',
-	prizeDrawingProgress: 'ход награждения',
+	jackpot: 'приз',
+	prizeDrawingProgress: 'ход',
 	destroyedTicket: 'разрушенный билет',
 	rapidParticipation: 'быстрое участие',
 	numberOfParticipants: 'число участников',
