@@ -10,7 +10,8 @@ export const ticket = {
 	needPay: '需支付资产',
 	receive: '可获得燃料',
 	changeNow: '立即映射',
-	transactionConfirmed: '交易确认',
+	// transactionConfirmed: '交易确认',
+	transactionConfirmed: '转燃料成功',
 	exceedingTheMaximumPurchaseQuantity: '超过最大购买量',
 	subscriptionRatio: '兑换比例',
 	subscriptionEnd: '兑换结束',
@@ -25,8 +26,10 @@ export const ticket = {
 	getInvitBalanceError: '获取奖励错误',
 	getBuyerLogError: '获取购买记录错误',
 	getInvitBuyLogError: '获取邀请记录错误',
-	transactionFaild: '交易失败',
-	sendTransactionConfirmed: '发送交易成功，等待确认',
+	// transactionFaild: '交易失败',
+	transactionFaild: '区块拥堵,请稍后重试',
+	// sendTransactionConfirmed: '发送交易成功，等待确认', 
+	sendTransactionConfirmed: '区块确认中...',
 	surplus: '剩余量',
 	theAddressSendCannotBeYourOwn: '地址不能是自己的',
 	failInSend: '发送失败',
@@ -43,8 +46,18 @@ export const ticket = {
 	sendLog: '发送记录',
 	withdrawalIncome: '提取收益',
 	available: '可',
-	becomeNode: '成为节点',
-	becomeNodeTips: '请确认映射{0}TRX至300000FPT，映射完成后FPT不会发送至您的账户，您的FPT将自动存入合约资金池，当其他用户映射FPT后，您可获得映射收益。同时您将获得超级节点游戏特权。',
+	// becomeNode: '成为节点',
+	becomeNode: '成为100名超级节点',
+	becomeNodeTips1: '请确认{0}TRX映射300000FPT',
+	becomeNodeTips2: '映射完成后FPT将自动转入智能合约执行',
+	becomeNodeTips3: '1.燃料映射永久平均分红收益',
+	becomeNodeTips4: '2.全网业绩5%平均分红收益',
+	contractFuelShortage: '智能合约燃料不足',
+	insufficientBalance: '余额不足',
+	smartContractTimeoutPleaseTryAgain : '智能合约超时，请重试',
+	insufficientServiceChargePleaseReserveEnoughTRX : '手续费不足，请预留足量TRX',
+	superNodeRevenue : '超级节点收益',
+	noIncomeToBeDrawn : '暂无可提取收益',
 }
 export const indexs = {
 	fireIsOnDreamsNeverGoOut: '火力全开,梦想永不熄火',
@@ -63,9 +76,11 @@ export const indexs = {
 export const overview = {
 	
 	invitationLink: '邀请链接',
-	drawGameRevenue: '导出游戏收益',
+	// drawGameRevenue: '导出游戏收益',
+	drawGameRevenue: '导出收益',
 	withdrawalOfNodeIncome: '提取节点收益',
-	gameParticipationProgress: '游戏参与进度',
+	// gameParticipationProgress: '复投进度',
+	gameParticipationProgress: '复投进度',
 	numberOfParticipants: '参与数量',
 	revenueEarned: '已获取收益',
 	revenueCap: '收益封顶',
@@ -86,7 +101,7 @@ export const overview = {
 	recommendationRecord: '推荐记录',
 	participationRecord: '参与记录',
 	winningRecord: '中奖记录',
-	revenueWithdrawalRecord: '收益到处记录',
+	revenueWithdrawalRecord: '收益导出记录',
 	superNodeRevenueRecord: '超级玩家收益记录',
 	addressBalance: '地址余额',
 	withdrawalFailed: '提现失败',
@@ -96,7 +111,7 @@ export const game = {
 	eachParticipationInEthRequires: '每参与2000TRX需',
 	jackpot: '奖池',
 	prizeDrawingProgress: '开奖进度',
-	destroyedTicket: '已焚烧燃料值',
+	destroyedTicket: '已焚烧燃料',
 	rapidParticipation: '快速参与',
 	numberOfParticipants: '参与资产数量',
 	pleaseInputEthQuantity: '请输入TRX数量',
@@ -106,7 +121,9 @@ export const game = {
 	invitationRecord: '邀请记录',
 	participation: '参与',
 	notOpenedYet: '待触发',
-	InviterCannotBeEmpty: '推荐人不能为空',
+	// InviterCannotBeEmpty: '推荐人不能为空',
+	InviterCannotBeEmpty: '请使用邀请链接参与游戏',
+	theInviteeisNotParticipatingInTheGame: '邀请人未参与游戏,邀请链接无效',
 }
 export const event = {
 	noData: '暂无数据',
@@ -122,12 +139,19 @@ export const event = {
 	awards: '奖项',
 	total: '总数',
 }
+export const egg = {
+	unclaimedIncome: '未认领收益',
+}
+
 export const please_use_wallet = '请使用imtoken或MetaMask等钱包访问';
 export const switch_lang = '切换语言';
 export const notYetOpen = '暂未开放';
-export const minimumPurchase = '最少购买 ';
+export const minimumPurchase = '起映射';
+export const minimumPlayer = '起参与';
 export const waitingForReturn = '等待返回';
-export const transactionConfirmed = '交易已确认';
+// export const transactionConfirmed = '交易已确认';
+export const transactionConfirmed = '已触发智能合约';
 export const assets = '资产';
-export const maximumPurchase = '最多使用 ';
+export const maximumPurchase = '最大映射 ';
+export const maximumPlayer = '最大参与 ';
 export const congratulationsToPlayerForWinningPrizeAndWinningPrizeInTotal = '恭喜玩家{0}中得{1}等奖,共获得奖金{2}';

@@ -47,7 +47,8 @@ export const ticket = {
 	available: 'доступный',
 	becomeNode: 'стать узлом',
 	becomeNodeTips: '{0} TRX в 300 000 FPT.После отображения, FPT не будет отправлять на ваш счет.Ваш FPT будет автоматически депонирован в Общий фонд контракта.когда другие пользователи отображают FPT, вы можете получить отображаемый доход.Также вы получите привилегию суперузловой игры.',
-
+	superNodeRevenue: 'сверхузловой доход',
+	noIncomeToBeDrawn : 'извлечение без дохода',
 }
 export const indexs = {
 	fireIsOnDreamsNeverGoOut: 'огонь во сне, никогда не погаснет',
@@ -107,6 +108,7 @@ export const game = {
 	invitationRecord: 'запись приглашения',
 	participation: 'Участие',
 	notOpenedYet: 'пока не открыт',
+	theInviteeisNotParticipatingInTheGame: 'Приглашенные не участвовали в игре.Ошибка ссылки на приглашение',
 }
 export const event = {
 	noData: 'Нет данных',
@@ -122,11 +124,17 @@ export const event = {
 	level: 'место',
 	reward: 'награда',
 }
+
+export const egg = {
+	unclaimedIncome: 'невостребованный доход',
+}
+
 export const please_use_wallet = 'Пожалуйста, используйте imtoken или MetaMask для доступа к бумажникам';
 export const switch_lang = 'язык переключения';
 export const notYetOpen = 'пока не открыт';
 export const minimumPurchase = 'купить минимум';
 export const waitingForReturn = 'ждать возвращения';
-export const maximumPurchase = 'максимальная покупательная способность';
+export const maximumPurchase = 'максимальное отображение ';
+export const maximumPlayer = 'максимальная степень участия ';
 export const congratulationsToPlayerForWinningPrizeAndWinningPrizeInTotal =
 	'Поздравляю игроков {0} с общей победой {1} и {2}';
