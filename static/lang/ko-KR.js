@@ -1,8 +1,34 @@
 export const index = {
 	info: '정보.',
 	ticket: '입장권.',
-	game: '게임.',
+	contract: '게임.',
 	overview: '개술 하 다.',
+	activateContractNode: '게임 노드 활성화',
+	activateContractTip: '당신 이 슈퍼 유저 특권 을 가지 고 있 음 을 검출, 하지만 당신 은 아직 활성화 하지 않 았 습 니 다, 활성화 하 시 겠 습 니까?(이 활성화 시 일 정량 을 소모 하 는 TRX)',
+	activate:'활성화 하 다.',
+	send: '확인 하 다.',
+}
+export const indexs = {
+	fireIsOnDreamsNeverGoOut: '난 롯 불 이 활활 타 오 르 고, 꿈 은 영원히 꺼 지지 않 는 다.',
+	indexTip1: '화력 을 다 발휘 하 다.',
+	indexTip2: "엔진 끄 지 마.",
+	totalSell: '총 측량 연료',
+	destroyed: '연소 한 연료',
+	contractProgress: '지능 계약',
+	didNotOpen: '아니요.',
+	totalParticipationInTheContract: '총 입장 료',
+	myInvitationLink: '나의 초대 링크',
+	copy: '복제',
+	beginToCopy: '복사 시작',
+	issue: '발행 하 다. {0}',
+	inviteeCannotBeEmpty: '초 대 받 은 사람 이 비 어 있 으 면 안 됩 니 다.',
+	pleaseInputWaveField: 'TRX 주 소 를 입력 하 세 요.',
+	manager: '관계자',
+	bind: '관계.',
+	pleaseUseTheInvitationAddress: '초대 주 소 를 사용 하 세 요.',
+	myInviter: '나의 친족.',
+	bindAddressTip:'제 관계자 지갑 주소.',
+	managerinvalid:'관계자 무효',
 }
 export const ticket = {
 	hold: '유지 하 다.',
@@ -10,7 +36,6 @@ export const ticket = {
 	needPay: '보수 가 필요 하 다',
 	receive: '접수 하 다.',
 	changeNow: '지금 당장 바 꿔.',
-	// transactionConfirmed: '交易确认',
 	transactionConfirmed: '연료 수송 성공',
 	exceedingTheMaximumPurchaseQuantity: '최대 구 매 량 을 초과 하 다',
 	subscriptionRatio: '청 약 비율',
@@ -26,10 +51,6 @@ export const ticket = {
 	getInvitBalanceError: '밸 런 스 오류 가 져 오기',
 	getBuyerLogError: '바이어 로그 가 져 오 는 중 오류',
 	getInvitBuyLogError: '로그 오류',
-	// transactionFaild: '交易失败',
-	transactionFaild: '차단 차단, 잠시 후 다시 시도 해 주세요.',
-	// sendTransactionConfirmed: '发送交易成功，等待确认', 
-	sendTransactionConfirmed: '차단 확인...',
 	surplus: '잉여.',
 	theAddressSendCannotBeYourOwn: '보 내주 신 주 소 는 본인 것 이 아 닙 니 다.',
 	failInSend: '발송 실패',
@@ -44,72 +65,27 @@ export const ticket = {
 	pleaseEnterTheAddressOfTheOtherParty: '상대방 의 주 소 를 입력 하 세 요',
 	pleaseEnterTheQuantityToSend: '발송 할 수량 을 입력 하 세 요',
 	sendLog: '일 지 를 보내다',
-	withdrawalIncome: '수입 을 취하 다',
+	withdrawalIncome: '계약 배당금',
 	available: '사용 가능 하 다.',
-	// becomeNode: '成为节点',
 	becomeNode: '100 개의 슈퍼 노드 가 됩 니 다.',
 	becomeNodeTips1: '{0} TRX 맵 30000 FPT 확인 하 세 요',
 	becomeNodeTips2: '맵 후, FPT 는 자동 으로 스마트 계약 수행 으로 전환',
-	becomeNodeTips3: '일연료 제도 영구 평균 배당금 수입',
-	becomeNodeTips4: '이전 네트워크 평균 배당 수입 5%',
-	becomeNodeTips5: '3 .すぐにノード累積所得 {0}',
+	becomeNodeTips3: '일연료 제도 영구 평균 배당금',
+	becomeNodeTips4: '이전 사이트 총 채용 액 의 5%',
+	becomeNodeTips5: '셋.슈퍼 유저 보상 {0} TRX 즉시 획득',
 	contractFuelShortage: '지능 계약 연료 부족',
 	insufficientBalance: '잔고 가 부족 하 다',
-	smartContractTimeoutPleaseTryAgain : '스마트 계약 시간 초과, 다시 시도 해 주세요.',
-	insufficientServiceChargePleaseReserveEnoughTRX : '서비스 비용 부족, 충분 한 TRX 를 예약 하 세 요',
-	superNodeRevenue : '슈퍼 노드 수입',
-	noIncomeToBeDrawn : '수령 가능 한 수입 이 없습니다',
-	superNode: 'スーパーノード',
+	smartContractTimeoutPleaseTryAgain: '스마트 계약 시간 초과, 다시 시도 해 주세요.',
+	insufficientServiceChargePleaseReserveEnoughTRX: '서비스 비용 부족, 충분 한 TRX 를 예약 하 세 요',
+	superNodeRevenue: '슈퍼 노드 수입',
+	noIncomeToBeDrawn: '슈퍼 유저 자산 이 없습니다',
+	superNode: '초 노드',
+	superNodeAsset: '슈퍼 노드 자원',
+	participating:'참여 하 다.',
+	confirm:'확인 하 다.',
+	pleaseInputTheSendingFuel:'연료 발송 입력',
 }
-export const indexs = {
-	fireIsOnDreamsNeverGoOut: '난 롯 불 이 활활 타 오 르 고, 꿈 은 영원히 꺼 지지 않 는 다.',
-	totalSell: '총 측량 연료',
-	destroyed: '연소 한 연료',
-	gameProgress: '지능 계약 트리거 진도',
-	didNotOpen: '열 리 지 않 음',
-	totalParticipationInTheGame: '총 입장 료',
-	myInviter: '나의 주인',
-	myInvitationLink: '나의 초대 링크',
-	copy: '복제 하 다.',
-	beginToCopy: '복사 시작',
-	issue: '발행 하 다. {0}',
-
-}
-export const overview = {
-	
-	invitationLink: '초대 링크',
-	// drawGameRevenue: '导出游戏收益',
-	drawGameRevenue: '파생 수익',
-	withdrawalOfNodeIncome: '노드 수입 추출',
-	// gameParticipationProgress: '复投进度',
-	gameParticipationProgress: '재 투자 진도',
-	numberOfParticipants: '참가 인원',
-	revenueEarned: '수입.',
-	revenueCap: '수입 상한 선',
-	reserveFund: '예비 기금',
-	numberOfSharedPlayers: '공유 유저 수량',
-	teamParameters: '그룹 매개 변수',
-	gameRevenue: '게임 수입',
-	shareInTheProfit: '이윤 을 배당 하 다.',
-	undrawnEarnings: '미 추출 수익',
-	gameStatus: '게임 상태',
-	noParticipation: '불 참',
-	prizePool: '상금.',
-	ticketRecords: '표 무 기록',
-	purchaseRecords: '구 매 기록',
-	refundRecord: '환불 기록',
-	commissionWithdrawalRecord: '공제금 기록',
-	gameRecord: '게임 기록',
-	recommendationRecord: '추천 기록',
-	participationRecord: '참여 기록',
-	winningRecord: '수상 기록',
-	revenueWithdrawalRecord: '수입 추출 기록',
-	superNodeRevenueRecord: '슈퍼 노드 수입 기록',
-	addressBalance: '주소 잔액',
-	withdrawalFailed: '인출 실패',
-	withdrawalSuccessful: '인출 에 성공 하 다.',
-}
-export const game = {
+export const contract = {
 	eachParticipationInEthRequires: 'TRX 2000 개 당 필요 합 니 다.',
 	jackpot: '일등상.',
 	prizeDrawingProgress: '상품 진행',
@@ -121,12 +97,54 @@ export const game = {
 	need: '필요 한 연료 비',
 	participationRecord: '참여 기록',
 	invitationRecord: '요청 레코드',
-	participation: 'Participation',
+	participation: '참여 하 다.',
 	notOpenedYet: '촉발 하 다.',
-	// InviterCannotBeEmpty: '推荐人不能为空',
 	InviterCannotBeEmpty: '초대 링크 로 게임 참여 하 세 요',
-	theInviteeisNotParticipatingInTheGame: '초청 자 는 게임 에 참가 하지 않 았 다.요청 링크 가 잘못 되 었 습 니 다',
+	theInviteeisNotParticipatingInTheContract: '초청 자 는 게임 에 참가 하지 않 았 다.요청 링크 가 잘못 되 었 습 니 다',
+	dataInfo: '데이터 정보',
+	invit: '인위.',
+	fullFire: '가득 하 다',
+	countdown: '카운트다운...',
+	phaseThree: '3 단계',
+	walletAddress: '지갑 주소',
+	pleaseBindTheManagerFirst: '사장 님 먼저 묶 어 주세요.',
+	contractLaunch:'게임 발표.',
 }
+export const overview = {
+	invitationLink: '초대 링크',
+	drawContractRevenue: '계약 명령',
+	withdrawalOfNodeIncome: '계약 배당금',
+	contractParticipationProgress: '재 투자 진도',
+	numberOfParticipants: '참가 인원',
+	revenueEarned: '수입.',
+	revenueCap: '수익 배수',
+	reserveFund: '누적 보너스',
+	numberOfSharedPlayers: '직접 푸 시 유저',
+	teamParameters: '팀 자산',
+	contractRevenue: '참여 수입',
+	shareInTheProfit: '판 촉 수입',
+	undrawnEarnings: '수입 미 수출',
+	contractStatus: '게임 상태',
+	noParticipation: '참여 하지 않 음',
+	prizePool: '상금.',
+	ticketRecords: '티켓 대기 록',
+	purchaseRecords: '구 매 기록',
+	refundRecord: '환불 기록',
+	commissionWithdrawalRecord: '공제금 기록',
+	contractRecord: '게임 기록',
+	recommendationRecord: '추천 기록',
+	participationRecord: '참여 기록',
+	winningRecord: '수상 기록',
+	revenueWithdrawalRecord: '계약 지령 서',
+	superNodeRevenueRecord: '계약 지시 배당 기록',
+	addressBalance: '주소 잔액',
+	withdrawalFailed: '인출 실패',
+	withdrawalSuccessful: '인출 에 성공 하 다.',
+	viewRelationships: '참여.',
+	superNode: '슈퍼 노드',
+	participating:'참여 하 다.',
+}
+
 export const event = {
 	noData: '데이터 없 음',
 	networkError: '네트워크 오류',
@@ -143,10 +161,24 @@ export const event = {
 }
 
 export const egg = {
-	unclaimedIncome: '무인 소득',
+	unclaimedIncome: '부화 하 다....',
+	revenueEarned: '얻다....',
 }
 
-export const please_use_wallet = 'Imtoken 이나 Metamask 등 지갑 으로 방문 하 십시오. ';
+export const relationship = {
+	level: '관련 {0} 행',
+	total: '총계 하 다',
+}
+export const prize = {
+	prizeReward:'상품.',
+	address:'주소.',
+	jackpot:'일등상.',
+	prize:'상품.',
+	amount:'수량.',
+	time:'시간.',
+}
+
+export const please_use_wallet = 'Imtoken 이나 TronLink 등 지갑 으로 방문 하 십시오. ';
 export const switch_lang = '언어 전환';
 export const notYetOpen = '아직 오픈 하지 않 았 습 니 다.';
 export const minimumPurchase = '측량 제도 하 다.';
@@ -158,3 +190,8 @@ export const assets = '자산.';
 export const maximumPurchase = '최대 맵 ';
 export const maximumPlayer = '최대 참여 도 ';
 export const congratulationsToPlayerForWinningPrizeAndWinningPrizeInTotal = '플레이어 {0} 총 이 겼 다 {1} 과 {2}';
+export const SelfPlayerForWinningPrizeAndWinningPrizeInTotal = '{0} 상과 {1} 상 수상 을 축하합니다.';
+export const fail = '실패 하 다.';
+export const success = '성공 하 다.';
+export const transactionFaild = '차단 차단, 잠시 후 다시 시도 해 주세요.';
+export const sendTransactionConfirmed = '차단 확인...';

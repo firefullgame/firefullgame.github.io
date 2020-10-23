@@ -1,10 +1,35 @@
 export const index = {
 	info: 'сведения',
 	ticket: 'топливо',
-	game: 'игра',
-	overview: 'обзор'
+	contract: 'игра',
+	overview: 'обзор',
+	activateContractNode: 'Активировать игровые узлы',
+	activateContractTip: 'обнаружено, что у вас есть привилегии суперигрока, но вы ещё не активировали его?(для этой активации требуется потребление определенного количества TRX)',
+	activate: 'активация',
+	send: 'подтверждение',
 }
-
+export const indexs = {
+	fireIsOnDreamsNeverGoOut: 'огонь во сне, никогда не погаснет',
+	indexTip1: 'полное открытие огня',
+	indexTip2: "Не выключай двигатель.",
+	totalSell: 'отображения',
+	destroyed: 'топливо',
+	contractProgress: 'запуск контракта',
+	didNotOpen: 'открыть',
+	totalParticipationInTheContract: 'количество',
+	myInvitationLink: 'ссылка на приглашение',
+	copy: 'щелчок',
+	beginToCopy: 'Копировать успешно',
+	issue: 'номер {0}',
+	inviteeCannotBeEmpty: 'Приглашенный не может быть пустым',
+	pleaseInputWaveField: 'Введите адрес TRX',
+	manager: 'связанный персонал',
+	bind: 'ошение',
+	pleaseUseTheInvitationAddress: 'Пожалуйста, используйте адрес приглашения',
+	myInviter: 'мои родственники',
+	bindAddressTip:'адрес бумажника',
+	managerinvalid:'недействительность корреспонденции',
+}
 export const ticket = {
 	hold: 'наличный',
 	quickBuy: 'быстрая покупка',
@@ -43,7 +68,7 @@ export const ticket = {
 	pleaseEnterTheAddressOfTheOtherParty: 'Введите адрес',
 	pleaseEnterTheQuantityToSend: 'Введите количество',
 	sendLog: 'журнал отправки',
-	withdrawalIncome: 'вернуть',
+	withdrawalIncome: 'дивиденд',
 	available: 'доступный',
 	becomeNode: 'стать узлом',
 	becomeNodeTips: '{0} TRX в 300 000 FPT.После отображения, FPT не будет отправлять на ваш счет.Ваш FPT будет автоматически депонирован в Общий фонд контракта.когда другие пользователи отображают FPT, вы можете получить отображаемый доход.Также вы получите привилегию суперузловой игры.',
@@ -51,57 +76,20 @@ export const ticket = {
 	becomeNodeTips1: 'Подтвердите отображение TRX 300 000 FPT {0}',
 	becomeNodeTips2: 'После отображения, FPT будет автоматически преобразован в выполнение интеллектуального контракта',
 	becomeNodeTips3: '1постоянный средний доход',
-	becomeNodeTips4: '2средний доход от распределения по сети 5%',
-	becomeNodeTips5: 'три.немедленно получить совокупный доход узла {0} TRX',
+	becomeNodeTips4: '25% от общего числа поступивших в интернет',
+	becomeNodeTips5: 'три.получить премию суперигрока {0} TRX',
 	superNodeRevenue: 'сверхузловой доход',
-	noIncomeToBeDrawn : 'извлечение без дохода',
+	noIncomeToBeDrawn: 'Нет активов суперигрока',
 	superNode: 'суперузел',
+	superNodeAsset: 'суперузловой',
+	insufficientBalance: 'дефицит',
+	smartContractTimeoutPleaseTryAgain : 'время ожидания интеллигентного контракта, попробуйте снова',
+	insufficientServiceChargePleaseReserveEnoughTRX : 'недостаточно оплаченные услуги, пожалуйста, резервируйте достаточно для TRX',
+	participating:'Участие',
+	confirm:'подтверждение',
+	pleaseInputTheSendingFuel:'Пожалуйста, введите отправленное топливо',
 }
-export const indexs = {
-	fireIsOnDreamsNeverGoOut: 'огонь во сне, никогда не погаснет',
-	totalSell: 'топливо общего отображения',
-	destroyed: 'сжигаемое топливо',
-	gameProgress: 'ход запуска интеллигентного контракта',
-	didNotOpen: 'не открыть',
-	totalParticipationInTheGame: 'Общее количество входов',
-	myInviter: 'мой приглашенный',
-	myInvitationLink: 'ссылка на приглашение',
-	copy: 'копировать',
-	beginToCopy: 'Копировать успешно',
-	issue: 'номер {0}',
-}
-export const overview = {
-	invitationLink: 'ссылка на',
-	drawGameRevenue: 'поступлений',
-	withdrawalOfNodeIncome: 'извлечение узловых доходов',
-	gameParticipationProgress: 'Participation Progress',
-	numberOfParticipants: 'ход участия',
-	revenueEarned: 'Поступления',
-	revenueCap: 'верхний предел дохода',
-	reserveFund: 'резервный фонд',
-	numberOfSharedPlayers: 'общий игрок',
-	teamParameters: 'параметр команды',
-	gameRevenue: 'игровой доход',
-	shareInTheProfit: 'делить прибыль',
-	undrawnEarnings: 'неиспользованный доход',
-	gameStatus: 'состояние игры',
-	noParticipation: 'Неучастие',
-	prizePool: 'приз',
-	ticketRecords: 'запись билетов',
-	purchaseRecords: 'запись топлива',
-	refundRecord: 'обмен премиями',
-	commissionWithdrawalRecord: 'распределительная запись',
-	gameRecord: 'игра рекорд',
-	recommendationRecord: 'рекомендательная запись',
-	participationRecord: 'запись участия',
-	winningRecord: 'запись приза',
-	revenueWithdrawalRecord: 'запись о снятии средств',
-	superNodeRevenueRecord: 'запись поступлений суперигрока',
-	addressBalance: 'Баланс адреса',
-	withdrawalFailed: 'Снятие не удалось',
-	withdrawalSuccessful: 'Вывод успешен',
-}
-export const game = {
+export const contract = {
 	eachParticipationInEthRequires: 'Участие ET',
 	jackpot: 'приз',
 	prizeDrawingProgress: 'ход',
@@ -115,7 +103,50 @@ export const game = {
 	invitationRecord: 'запись приглашения',
 	participation: 'Участие',
 	notOpenedYet: 'пока не открыт',
-	theInviteeisNotParticipatingInTheGame: 'Приглашенные не участвовали в игре.Ошибка ссылки на приглашение',
+	theInviteeisNotParticipatingInTheContract: 'Приглашенные не участвовали в игре.Ошибка ссылки на приглашение',
+	InviterCannotBeEmpty: 'Пожалуйста, используйте ссылку приглашения для участия в игре',
+	dataInfo: 'Информация о данных',
+	invit: 'размерность',
+	fullFire: 'открытие',
+	countdown: 'обратный отсчет...',
+	phaseThree: 'Этап III',
+	walletAddress: 'адрес',
+	pleaseBindTheManagerFirst: 'Сначала свяжите менеджера',
+	contractLaunch:'игра',
+}
+export const overview = {
+	invitationLink: 'ссылка на',
+	drawContractRevenue: 'команда',
+	withdrawalOfNodeIncome: 'дивиденд',
+	contractParticipationProgress: 'Participation Progress',
+	numberOfParticipants: 'ход участия',
+	revenueEarned: 'Поступления',
+	revenueCap: 'верхний предел дохода',
+	reserveFund: 'резервный фонд',
+	numberOfSharedPlayers: 'общий игрок',
+	teamParameters: 'параметр команды',
+	contractRevenue: 'игровой доход',
+	shareInTheProfit: 'делить прибыль',
+	undrawnEarnings: 'неиспользованный доход',
+	contractStatus: 'состояние игры',
+	noParticipation: 'Неучастие',
+	prizePool: 'приз',
+	ticketRecords: 'запись билетов',
+	purchaseRecords: 'запись топлива',
+	refundRecord: 'обмен премиями',
+	commissionWithdrawalRecord: 'распределительная запись',
+	contractRecord: 'игра рекорд',
+	recommendationRecord: 'рекомендательная запись',
+	participationRecord: 'запись участия',
+	winningRecord: 'запись приза',
+	revenueWithdrawalRecord: 'запись договорных команд',
+	superNodeRevenueRecord: 'запись дивидендов по контракту',
+	addressBalance: 'Баланс адреса',
+	withdrawalFailed: 'Снятие не удалось',
+	withdrawalSuccessful: 'Вывод успешен',
+	viewRelationships: 'отношение',
+	superNode: 'суперузел',
+	participating:'Участие',
 }
 export const event = {
 	noData: 'Нет данных',
@@ -131,12 +162,24 @@ export const event = {
 	level: 'место',
 	reward: 'награда',
 }
-
 export const egg = {
-	unclaimedIncome: 'невостребованный доход',
+	unclaimedIncome: 'инкубация...',
+	revenueEarned: 'получить...',
+}
+export const relationship = {
+	level: 'корреляция {0} строка',
+	total: 'итого',
+}
+export const prize = {
+	prizeReward:'награда',
+	address:'адрес',
+	jackpot:'первый приз',
+	prize:'награда',
+	amount:'количество',
+	time:'время',
 }
 
-export const please_use_wallet = 'Пожалуйста, используйте imtoken или MetaMask для доступа к бумажникам';
+export const please_use_wallet = 'Пожалуйста, используйте imtoken или TronLink для доступа к бумажникам';
 export const switch_lang = 'язык переключения';
 export const notYetOpen = 'пока не открыт';
 export const minimumPurchase = 'купить минимум';
@@ -145,3 +188,9 @@ export const maximumPurchase = 'максимальное отображение 
 export const maximumPlayer = 'максимальная степень участия ';
 export const congratulationsToPlayerForWinningPrizeAndWinningPrizeInTotal =
 	'Поздравляю игроков {0} с общей победой {1} и {2}';
+export const SelfPlayerForWinningPrizeAndWinningPrizeInTotal =
+	'поздравляю вас с присуждением наград {0} и {1}';
+export const fail = 'неудача';
+export const success = 'успех';
+export const transactionFaild = 'блокировка, попробуйте позже';
+export const sendTransactionConfirmed = 'блокировать подтверждение...';

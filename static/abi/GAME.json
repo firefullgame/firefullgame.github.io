@@ -40,7 +40,37 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "totalJoin",
+		"name": "contractInfo",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "superPlayerProfit",
 		"outputs": [
 			{
 				"name": "",
@@ -52,17 +82,17 @@
 		"type": "function"
 	},
 	{
-		"constant": false,
-		"inputs": [
+		"constant": true,
+		"inputs": [],
+		"name": "totalJoin",
+		"outputs": [
 			{
-				"name": "_invit",
-				"type": "address"
+				"name": "",
+				"type": "uint256"
 			}
 		],
-		"name": "join",
-		"outputs": [],
-		"payable": true,
-		"stateMutability": "payable",
+		"payable": false,
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -116,17 +146,12 @@
 		"type": "function"
 	},
 	{
-		"constant": true,
+		"constant": false,
 		"inputs": [],
-		"name": "getSuperNode",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address[]"
-			}
-		],
+		"name": "sedimentaryAssetWithdraw",
+		"outputs": [],
 		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -153,6 +178,20 @@
 		"type": "function"
 	},
 	{
+		"constant": false,
+		"inputs": [],
+		"name": "activateSuperPlayer",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"constant": true,
 		"inputs": [],
 		"name": "creater",
@@ -164,6 +203,43 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_address",
+				"type": "address"
+			}
+		],
+		"name": "contractPlayerInfo",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address[]"
+			},
+			{
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_invit",
+				"type": "address"
+			}
+		],
+		"name": "preShip",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -181,6 +257,15 @@
 				"type": "bool"
 			}
 		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "startContract",
+		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -229,11 +314,33 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "retainScale",
+		"name": "contractIndexInfo",
 		"outputs": [
 			{
 				"name": "",
+				"type": "bool"
+			},
+			{
+				"name": "",
 				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "contractState",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
 			}
 		],
 		"payable": false,
@@ -248,7 +355,7 @@
 				"type": "address"
 			}
 		],
-		"name": "superNodeList",
+		"name": "superPlayerList",
 		"outputs": [
 			{
 				"name": "isActive",
@@ -260,6 +367,10 @@
 			},
 			{
 				"name": "profitFlag",
+				"type": "uint256"
+			},
+			{
+				"name": "teamPlayers",
 				"type": "uint256"
 			}
 		],
@@ -284,6 +395,20 @@
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "joinScale",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -320,31 +445,12 @@
 		"type": "function"
 	},
 	{
-		"constant": true,
+		"constant": false,
 		"inputs": [],
-		"name": "superNodeProfit",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
+		"name": "superPlayerWithdraw",
+		"outputs": [],
 		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "retainFlag",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -362,25 +468,12 @@
 		"type": "function"
 	},
 	{
-		"constant": true,
+		"constant": false,
 		"inputs": [],
-		"name": "gameIndexInfo",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			},
-			{
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
+		"name": "join",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
@@ -395,15 +488,6 @@
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [],
-		"name": "retainWithdraw",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -440,49 +524,22 @@
 		"type": "function"
 	},
 	{
-		"constant": false,
-		"inputs": [],
-		"name": "superNodeWithdraw",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
 		"constant": true,
-		"inputs": [],
-		"name": "gameState",
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "retainAddress",
 		"outputs": [
 			{
 				"name": "",
-				"type": "bool"
+				"type": "address"
 			}
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [],
-		"name": "startGame",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_amount",
-				"type": "uint256"
-			}
-		],
-		"name": "sedimentaryAssetWithdraw",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -504,36 +561,6 @@
 		"inputs": [],
 		"name": "sedimentaryAsset",
 		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "gameInfo",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			},
-			{
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"name": "",
-				"type": "uint256"
-			},
 			{
 				"name": "",
 				"type": "uint256"
@@ -586,15 +613,11 @@
 				"type": "uint256"
 			},
 			{
-				"name": "gameBalance",
+				"name": "jackpotProfit",
 				"type": "uint256"
 			},
 			{
-				"name": "recommand",
-				"type": "uint256"
-			},
-			{
-				"name": "reserve",
+				"name": "contractBalance",
 				"type": "uint256"
 			},
 			{
@@ -602,7 +625,7 @@
 				"type": "uint256"
 			},
 			{
-				"name": "isNode",
+				"name": "isSP",
 				"type": "bool"
 			}
 		],
@@ -648,7 +671,16 @@
 		"type": "function"
 	},
 	{
-		"inputs": [],
+		"inputs": [
+			{
+				"name": "_address1",
+				"type": "address"
+			},
+			{
+				"name": "_address2",
+				"type": "address"
+			}
+		],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "constructor"
@@ -687,11 +719,6 @@
 				"indexed": false,
 				"name": "_player",
 				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "_joinAmount",
-				"type": "uint256"
 			},
 			{
 				"indexed": false,
@@ -834,7 +861,7 @@
 				"type": "uint256"
 			}
 		],
-		"name": "SuperNodeEvent",
+		"name": "SuperPlayerEvent",
 		"type": "event"
 	},
 	{
@@ -856,7 +883,7 @@
 				"type": "uint256"
 			}
 		],
-		"name": "leaveGameEvent",
+		"name": "leaveContractEvent",
 		"type": "event"
 	}
 ]

@@ -1,8 +1,34 @@
 export const index = {
 	info: 'Info',
 	ticket: 'Ticket',
-	game: 'Game',
+	contract: 'Contract',
 	overview: 'Overview',
+	activateContractNode:'Activate Contract Node',
+	activateContractTip:'It Is Detected That You Have Super Player Privilege, But You Have Not Activated It, Do You Want To Activate It? (This Activation Needs To Consume A Certain Amount Of TRX)',
+	activate:'Activate',
+	send: 'confirm',
+}
+export const indexs = {
+	fireIsOnDreamsNeverGoOut: 'Fire Is On Dreams Never Go Out',
+	indexTip1: 'Full Fire',
+	indexTip2: "Never Put Out The Fire",
+	totalSell: 'Total Fuel',
+	destroyed: 'Burned Fuel',
+	contractProgress: 'Number Entrants',
+	didNotOpen: 'Not Open',
+	totalParticipationInTheContract: 'Total Admission',
+	myInvitationLink: 'My Invitation Link',
+	copy: 'Copy',
+	beginToCopy: 'Begin To Copy',
+	issue: 'Issue {0}',
+	inviteeCannotBeEmpty: 'Invitee Cannot Be Empty',
+	pleaseInputWaveField: 'please Input TRX Address',
+	manager: 'Related Person',
+	bind: 'Relation',
+	pleaseUseTheInvitationAddress:'Please Use The Address Of The Related Person',
+	myInviter: 'My Related Person',
+	bindAddressTip:'My affiliate wallet address',
+	managerinvalid:'Related Person Invalid',
 }
 export const ticket = {
 	hold: 'Hold',
@@ -10,14 +36,10 @@ export const ticket = {
 	needPay: 'NeedPay',
 	receive: 'Receive',
 	changeNow: 'Change Now',
-	// transactionConfirmed: '交易确认',
 	transactionConfirmed: 'successful Fuel Transfer',
 	exceedingTheMaximumPurchaseQuantity: 'Exceeding The Maximum Purchase Quantity',
-	subscriptionRatio: 'Subscription Ratio',
-	subscriptionEnd: 'Subscription End',
 	pleaseInputETHQuantity: 'Please Input TRX Quantity',
 	awardReceived: 'Award Received',
-	withdraw: 'Withdraw',
 	buyLog: 'Buy Log',
 	invitLog: 'Invit Log',
 	getPriceError: 'Get Price Error',
@@ -26,10 +48,6 @@ export const ticket = {
 	getInvitBalanceError: 'Get Invit Balance Error',
 	getBuyerLogError: 'Get Buyer Log Error',
 	getInvitBuyLogError: 'Get Invit Buy Log Error',
-	// transactionFaild: '交易失败',
-	transactionFaild: 'Block Congestion, Please Try Again Later',
-	// sendTransactionConfirmed: '发送交易成功，等待确认', 
-	sendTransactionConfirmed: 'Block Confirmation...',
 	surplus: 'Surplus',
 	theAddressSendCannotBeYourOwn: 'The Address Send Cannot Be Your Own',
 	failInSend: 'Fail In Send',
@@ -44,73 +62,28 @@ export const ticket = {
 	pleaseEnterTheAddressOfTheOtherParty: 'Please Enter The Address Of The Other Party',
 	pleaseEnterTheQuantityToSend: 'Please Enter The Quantity To Send',
 	sendLog: 'Send Log',
-	withdrawalIncome: 'Withdrawal Income',
+	withdrawalIncome: 'bonus',
 	available: 'Available',
-	// becomeNode: '成为节点',
 	becomeNode: 'Become 100 Super Nodes',
 	becomeNodeTips1: 'Please Confirm That The {0} TRX Maps 300000 FPT',
 	becomeNodeTips2: 'After Mapping, FPT Will Be Automatically Transferred To Smart Contract Execution',
-	becomeNodeTips3: '1. Fuel Mapping Permanent Average Dividend Income',
-	becomeNodeTips4: '2. 5% Average Dividend Income Of The Whole Network',
-	becomeNodeTips5: '3. Obtain node cumulative income {0} TRX immediately',
+	becomeNodeTips3: '1. Fuel mapping permanent average dividend',
+	becomeNodeTips4: '2. 5% of the total admission of the whole network',
+	becomeNodeTips5: '3. Get super player bonus {0} TRX immediately',
 	contractFuelShortage: 'Smart Contract Fuel Shortage',
 	insufficientBalance: 'Insufficient Balance',
 	smartContractTimeoutPleaseTryAgain : 'Smart Contract Timeout , Please Try Again',
 	insufficientServiceChargePleaseReserveEnoughTRX : 'Insufficient Service Charge ,Please Reserve Enough TRX',
-	superNodeRevenue : 'Super Node Revenue',
-	noIncomeToBeDrawn : 'No Income To Be Drawn',
+	superNodeRevenue : 'Super Player Bonus',
+	noIncomeToBeDrawn: 'No super player assets',
 	superNode: 'Super Node',
+	superNodeAsset: 'Super Node Asset',
+	participating:'Participating',
+	confirm:'Confirm',
+	pleaseInputTheSendingFuel:'Please Input The Sending Fuel',
 }
-export const indexs = {
-	fireIsOnDreamsNeverGoOut: 'Fire Is On, Dreams Never Go Out',
-	totalSell: 'Total Mapping Fuel',
-	destroyed: 'Burned Fuel',
-	gameProgress: 'Smart Contract Trigger Progress',
-	didNotOpen: 'Did Not Open',
-	totalParticipationInTheGame: 'Total Admission',
-	myInviter: 'My Host',
-	myInvitationLink: 'My Invitation Link',
-	copy: 'Copy',
-	beginToCopy: 'Begin To Copy',
-	issue: 'Issue {0}',
-
-}
-export const overview = {
-	
-	invitationLink: 'Invitation Link',
-	// drawGameRevenue: '导出游戏收益',
-	drawGameRevenue: 'Derived Income',
-	withdrawalOfNodeIncome: 'Withdrawal Of Node Income',
-	// gameParticipationProgress: '复投进度',
-	gameParticipationProgress: 'Re Investment Progress',
-	numberOfParticipants: 'Number Of Participants',
-	revenueEarned: 'Revenue Earned',
-	revenueCap: 'RevenueCap',
-	reserveFund: 'ReserveFund',
-	numberOfSharedPlayers: 'Number Of Shared Players',
-	teamParameters: 'Team Parameters',
-	gameRevenue: 'Game Revenue',
-	shareInTheProfit: 'Share In The Profit',
-	undrawnEarnings: 'Undrawn Earnings',
-	gameStatus: 'Game Status',
-	noParticipation: 'No Participation',
-	prizePool: 'Prize Pool',
-	ticketRecords: 'Ticket Records',
-	purchaseRecords: 'Purchase Records',
-	refundRecord: 'Refund Record',
-	commissionWithdrawalRecord: 'Commission Withdrawal Record',
-	gameRecord: 'Game Record',
-	recommendationRecord: 'Recommendation Record',
-	participationRecord: 'Participation Record',
-	winningRecord: 'Winning Record',
-	revenueWithdrawalRecord: 'Revenue Withdrawal Record',
-	superNodeRevenueRecord: 'Super Node Revenue Record',
-	addressBalance: 'Address Balance',
-	withdrawalFailed: 'Withdrawal Failed',
-	withdrawalSuccessful: 'Withdrawal Successful',
-}
-export const game = {
-	eachParticipationInEthRequires: 'Every 2000 TRX requires',
+export const contract = {
+	eachParticipationInEthRequires: 'Every 2000 TRX Requires',
 	jackpot: 'Jackpot',
 	prizeDrawingProgress: 'Prize Progress',
 	destroyedTicket: 'Burned Fuel',
@@ -120,12 +93,54 @@ export const game = {
 	instantInvolvement: 'Get Involved Now',
 	need: 'Fuel Ratio Required',
 	participationRecord: 'Participation Record',
-	invitationRecord: 'Invitation Record',
+	invitationRecord: 'Associated Records',
 	participation: 'Participation',
 	notOpenedYet: 'Triggered',
-	// InviterCannotBeEmpty: '推荐人不能为空',
-	InviterCannotBeEmpty: 'Please use the invitation link to participate in the game',
-	theInviteeisNotParticipatingInTheGame: 'The invitee is not participating in the game. The invitation link is invalid',
+	InviterCannotBeEmpty: 'Please use the invitation link to participate in the contract',
+	theInviteeisNotParticipatingInTheContract: 'The invitee is not participating in the contract. The invitation link is invalid',
+	dataInfo:'Data Info',
+	invit:'Invit',
+	fullFire:'Full Fire',
+	countdown:'Count Down...',
+	phaseThree:'phase III',
+	walletAddress:'Address',
+	pleaseBindTheManagerFirst:'Please Bind The Related Person First',
+	contractLaunch:'Contract Launch',
+}
+export const overview = {
+	invitationLink: 'Invitation',
+	drawContractRevenue: 'instruction',
+	withdrawalOfNodeIncome: 'dividend',
+	contractParticipationProgress: 'Re Investment Progress',
+	numberOfParticipants: 'Participating Assets',
+	revenueEarned: 'Total Revenue',
+	revenueCap: 'Earnings Multiples',
+	reserveFund: 'Cumulative Bonus',
+	numberOfSharedPlayers: 'Direct Push Players',
+	teamParameters: 'Team Assets',
+	contractRevenue: 'Participation Income',
+	shareInTheProfit: 'Promotion Income',
+	undrawnEarnings: 'Earnings Not Exported',
+	contractStatus: 'Contract Status',
+	noParticipation: 'No Participation',
+	prizePool: 'Prize Pool',
+	ticketRecords: 'Ticket Records',
+	purchaseRecords: 'Purchase Records',
+	refundRecord: 'Refund Record',
+	commissionWithdrawalRecord: 'Commission Export Record',
+	contractRecord: 'Contract Record',
+	recommendationRecord: 'Recommendation Record',
+	participationRecord: 'Participation Record',
+	winningRecord: 'Winning Record',
+	revenueWithdrawalRecord: 'Contract instruction record',
+	superNodeRevenueRecord: 'Contract instruction dividend record',
+	addressBalance: 'Address Balance',
+	withdrawalFailed: 'Export Failed',
+	withdrawalSuccessful: 'Export Successful',
+	viewRelationships:'relationships',
+	superNode: 'Super Node',
+	participating:'Participating',
+	withdrawalTip: 'No Income Can Be Derived',
 }
 export const event = {
 	noData: 'No Data',
@@ -141,20 +156,37 @@ export const event = {
 	awards: 'Awards',
 	total: 'Total',
 }
-
 export const egg = {
-	unclaimedIncome: 'unclaimed Income',
+	unclaimedIncome: 'Hatching...',
+	revenueEarned: 'Getting...',
 }
 
-export const please_use_wallet = 'Please Use Wallet Such As Imtoken Or Metamask To Access ';
+export const relationship = {
+	level:'Association {0} Row',
+	total:'Total'
+}
+export const prize = {
+	prizeReward:'Prize Reward',
+	address:'Address',
+	jackpot:'Jackpot',
+	prize:'Prize',
+	amount:'Amount',
+	time:'Time',
+}
+
+export const please_use_wallet = 'Please Use Wallet Such As Imtoken Or TronLink To Access ';
 export const switch_lang = 'Switch Language';
 export const notYetOpen = 'Not Yet Open';
 export const minimumPurchase = 'Mapping';
 export const minimumPlayer = 'Get Involved';
 export const waitingForReturn = 'Waiting For Return';
-// export const transactionConfirmed = '交易已确认';
 export const transactionConfirmed = 'Smart Contract Triggered';
 export const assets = 'Assets';
 export const maximumPurchase = 'Maximum Mapping ';
 export const maximumPlayer = 'Maximum Participation ';
 export const congratulationsToPlayerForWinningPrizeAndWinningPrizeInTotal = 'Congratulations to player {0} for winning {1} and {2} in total';
+export const SelfPlayerForWinningPrizeAndWinningPrizeInTotal = 'Congratulations on winning the {0} prize and the {1} prize';
+export const fail = 'Fail';
+export const success = 'Success';
+export const transactionFaild = 'Block Congestion, Please Try Again Later';
+export const sendTransactionConfirmed = 'Block Confirmation...';

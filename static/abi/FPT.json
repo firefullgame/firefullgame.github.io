@@ -15,6 +15,25 @@
 	},
 	{
 		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "superPlayerQueue",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
 		"inputs": [],
 		"name": "surplus",
 		"outputs": [
@@ -48,47 +67,6 @@
 		"outputs": [
 			{
 				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "nodeProfit",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "nodeInfo",
-		"outputs": [
-			{
-				"name": "state",
-				"type": "bool"
-			},
-			{
-				"name": "withdrawProfit",
-				"type": "uint256"
-			},
-			{
-				"name": "profitFlag",
 				"type": "uint256"
 			}
 		],
@@ -152,19 +130,19 @@
 		"type": "function"
 	},
 	{
-		"constant": false,
-		"inputs": [],
-		"name": "withdraw",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
 		"constant": true,
-		"inputs": [],
-		"name": "currentNomalScale",
+		"inputs": [
+			{
+				"name": "_account",
+				"type": "address"
+			}
+		],
+		"name": "getSP",
 		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			},
 			{
 				"name": "",
 				"type": "uint256"
@@ -179,24 +157,18 @@
 		"type": "function"
 	},
 	{
-		"constant": false,
+		"constant": true,
 		"inputs": [],
-		"name": "superNode",
+		"name": "currentNomalScale",
 		"outputs": [
 			{
 				"name": "",
-				"type": "address[]"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getProgressScale",
-		"outputs": [
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
 			{
 				"name": "",
 				"type": "uint256"
@@ -293,14 +265,28 @@
 		"constant": false,
 		"inputs": [
 			{
-				"name": "_gameAddress",
+				"name": "_contractAddress",
 				"type": "address"
 			}
 		],
-		"name": "setGame",
+		"name": "setContract",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "contractState",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -319,12 +305,25 @@
 	},
 	{
 		"constant": true,
-		"inputs": [],
-		"name": "owner",
-		"outputs": [
+		"inputs": [
 			{
 				"name": "",
 				"type": "address"
+			}
+		],
+		"name": "superPlayerInfoList",
+		"outputs": [
+			{
+				"name": "state",
+				"type": "bool"
+			},
+			{
+				"name": "withdrawProfit",
+				"type": "uint256"
+			},
+			{
+				"name": "profitFlag",
+				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -380,11 +379,11 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "gameAddress",
+		"name": "periods",
 		"outputs": [
 			{
 				"name": "",
-				"type": "address"
+				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -394,11 +393,11 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "periods",
+		"name": "superPlayerInfo",
 		"outputs": [
 			{
 				"name": "",
-				"type": "uint256"
+				"type": "address[]"
 			}
 		],
 		"payable": false,
@@ -443,6 +442,58 @@
 		"type": "function"
 	},
 	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_nodeAddress",
+				"type": "address"
+			},
+			{
+				"name": "_invitAddress",
+				"type": "address"
+			},
+			{
+				"name": "_amount",
+				"type": "uint256"
+			},
+			{
+				"name": "_timeStamp",
+				"type": "uint256"
+			}
+		],
+		"name": "restore",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "nomalState",
+		"outputs": [
+			{
+				"name": "count",
+				"type": "uint256"
+			},
+			{
+				"name": "amount",
+				"type": "uint256"
+			},
+			{
+				"name": "token",
+				"type": "uint256"
+			},
+			{
+				"name": "withdraw",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"constant": true,
 		"inputs": [],
 		"name": "startPeople",
@@ -464,20 +515,6 @@
 			{
 				"name": "",
 				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "gameState",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
 			}
 		],
 		"payable": false,
@@ -532,10 +569,22 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "totalSale",
+		"name": "nodeState",
 		"outputs": [
 			{
-				"name": "",
+				"name": "count",
+				"type": "uint256"
+			},
+			{
+				"name": "amount",
+				"type": "uint256"
+			},
+			{
+				"name": "token",
+				"type": "uint256"
+			},
+			{
+				"name": "withdraw",
 				"type": "uint256"
 			}
 		],
@@ -555,6 +604,20 @@
 		"outputs": [],
 		"payable": true,
 		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "contractAddress",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
