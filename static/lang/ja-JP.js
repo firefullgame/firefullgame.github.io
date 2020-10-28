@@ -144,6 +144,7 @@ export const overview = {
 	superNode: 'スーパーノード',
 	participating:'傍観',
 	withdrawalTip: '収入は得られない',
+	prohibitDuplicateMapping: '重複マッピングを禁止する',
 }
 export const event = {
 	noData: 'データなし',

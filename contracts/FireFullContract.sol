@@ -70,10 +70,10 @@ library SafeMath {
 
 interface FirePowerToken {
     function saleScale() external view returns (uint);
-    function superNode() external view returns (address[] memory) ;
     function balanceOf(address _owner) external view returns (uint) ;
     function burn(address _from, uint _value) external returns (bool);
     function totalSupply() external view returns (uint);
+    function getSP(address _account) view external returns(bool,uint,uint);
 }
 contract FFGModel{
     struct playerObj{
@@ -85,12 +85,12 @@ contract FFGModel{
         uint totalProfit;
         uint nomalProfit;
         uint teamProfit;
-        uint gameBalance;
+        uint jackpotProfit;
+        uint contractBalance;
         address[] invit;
         uint[] recommand;
-        uint reserve;
         uint teamJoin;
-        bool isNode;
+        bool isSP;
     }
     
     struct jackpotObj{
@@ -98,10 +98,11 @@ contract FFGModel{
         uint water;
         uint scale;
     }
-    struct superNodeObj{
+    struct superPlayerObj{
         bool isActive;
         uint profit;
         uint profitFlag;
+        uint teamPlayers;
     }
 }
 contract FFGConfig is FFGModel{
@@ -112,26 +113,25 @@ contract FFGConfig is FFGModel{
     uint public sedimentaryAsset = 0;
     uint public playerCounter = 0;
     uint public minJoinAmount = 2000 trx;
-    
-    mapping(address => playerObj) public players;
-    mapping(uint => address) public joinPlayerList;
-    address[] public nomalList = new address[](5);
+    uint[] public rewardScale = new uint[](10);
+    uint public jackpotIndex = 1;
     uint public nomalListIndex = 0;
-    bool public gameState = false;
+    bool public contractState = false;
+    address[] public nomalList = new address[](5);
+    address payable[] public retainAddress = new address payable[](2);
     event WithdrawEvent(address indexed _player,uint _amount,uint time);
     event InvitEvent(address indexed _from,address _player,uint time);
     event JoinEvent(address indexed _player,uint _joinAmount,uint time);
     event ProfitEvent(address indexed _player,uint _rewardAmount,uint time);
     event TeamRewardEvent(address indexed _player,address _invit,uint _level, uint _rewardAmount,uint time);
     event PrizeEvent(address indexed _player,uint _jackpot,uint _prize,uint _amount,uint time);
-    event SuperNodeEvent(address indexed _player,uint _total,uint _amount,uint time);
-    event leaveGameEvent(address indexed _player,uint _output,uint time);
-    uint[] public rewardScale = new uint[](10);
-    uint public jackpotIndex = 1;
+    event SuperPlayerEvent(address indexed _player,uint _total,uint _amount,uint time);
+    event leaveContractEvent(address indexed _player,uint _output,uint time);
+
     mapping(uint=>jackpotObj) public jackpot;
-    uint public retainScale = 3;
-    uint public retainFlag = 0;
-    mapping(address => superNodeObj) public superNodeList;
+    mapping(address => superPlayerObj) public superPlayerList;
+    mapping(address => playerObj) public players;
+    mapping(uint => address) public joinPlayerList;
 
     function periodsLimit() public view returns(uint){
         if(periods == 1){
@@ -151,17 +151,6 @@ contract FFGConfig is FFGModel{
             return 36;
         }
     }
-    /*function joinScale(uint _amount) internal pure returns (uint){
-        if(_amount >= 2000 trx && _amount <= 50000 trx){
-            return 26;
-        }else if(_amount > 50000 trx && _amount<= 100000 trx){
-            return 30;
-        }else if(_amount > 100000 trx && _amount<= 200000 trx){
-            return 36;
-        }else{
-            return 0;
-        }
-    }*/
     modifier isHuman() {
         address _addr = msg.sender;
         uint _codeLength;
@@ -172,10 +161,10 @@ contract FFGConfig is FFGModel{
     }
 }
 
-contract FireFullGame is FFGConfig,Ownable{
+contract FireFullContract is FFGConfig,Ownable{
     using SafeMath for uint;
     function join() payable external{
-        require(gameState,'Game Not Start');
+        require(contractState,'Contract Not Start');
         require(msg.value <= periodsLimit(),'Period Maxmum limit exceeded');
         require(msg.value >= minJoinAmount,'Period Minimum limit exceeded');
         require(players[msg.sender].state,'Please bind the recommender in advance');
@@ -187,7 +176,7 @@ contract FireFullGame is FFGConfig,Ownable{
         uint tokenBalance = token.balanceOf(msg.sender);
         require(tokenBalance >= ticket,'ticket not enough');
         
-        gameReward(msg.value.mul(35).div(100));
+        contractReward(msg.value.mul(35).div(100));
         
         
         joinPlayerList[playerCounter] = msg.sender;
@@ -201,86 +190,14 @@ contract FireFullGame is FFGConfig,Ownable{
             nomalListIndex++;
         }
         
-        /*if(players[msg.sender].state == false){
-            address[] memory myinvit = new address[](10);
-            myinvit[0] = _invit;
-            players[_invit].recommand[0]+=1;
-            players[_invit].recommand[1]+=1;
-            for(uint i = 0;i<9;i++){
-                if(players[_invit].invit[i]!=address(0x0)){
-                    myinvit[i+2] = players[_invit].invit[i];
-                    players[players[_invit].invit[i]].recommand[i+2]+=1;
-                }else{
-                    break;
-                }
-            }
-            
-            emit InvitEvent(_invit,msg.sender,now);
-
-            address[] memory nodeList = token.superNode();
-            bool nodeFlag = false;
-            for(uint ii = 0; ii<nodeList.length;ii++){
-                if(nodeList[ii] == msg.sender){
-                    nodeFlag = true;
-                    superNodeList[msg.sender] = superNodeObj({
-                        isActive:nodeFlag,
-                        profit:0,
-                        profitFlag:0
-                    });
-                    break;
-                }
-            }
-
-            players[msg.sender] = playerObj({
-                state:true,
-                joinState:true,
-                input:msg.value, 
-                nomalMax:msg.value.mul(11).div(10),
-                output:profit,
-                totalProfit:0,
-                nomalProfit:0,
-                teamProfit:0,
-                gameBalance:0,
-                invit:myinvit,
-                recommand:new uint[](11),
-                reserve:0,
-                teamJoin:0,
-                isNode:nodeFlag
-            });
-            
-            
-        }else{
-            playerObj memory player = players[msg.sender];
-            if(player.joinState == true){
-                if(player.input.add(msg.value) > periodsLimit()){
-                    player.reserve = player.reserve.add(msg.value);
-                }else{
-                    player.input = player.input.add(msg.value);
-                    uint _scale = joinScale(player.input);
-                    player.output = player.input.mul(_scale).div(10);
-                    player.nomalMax = player.input.mul(11).div(10);
-                }
-            }else{
-                player.input = msg.value;
-                player.output = profit;
-                player.totalProfit = 0;
-                player.nomalProfit = 0;
-                player.teamProfit = 0;
-                player.joinState = true;
-                players[_invit].recommand[0]+=1;
-            }
-            players[msg.sender] = player;
-        }*/
         playerObj memory player = players[msg.sender];
         if(player.joinState == true){
-            if(player.input.add(msg.value) > periodsLimit()){
-                player.reserve = player.reserve.add(msg.value);
-            }else{
-                player.input = player.input.add(msg.value);
-                uint _scale = joinScale();
-                player.output = player.input.mul(_scale).div(10);
-                player.nomalMax = player.input.mul(11).div(10);
-            }
+            require(player.input.add(msg.value) <= periodsLimit(),'Period Maxmum limit exceeded');
+            player.input = player.input.add(msg.value);
+            //uint _scale = joinScale();
+            uint _scale = player.output.mul(10).div(player.input);
+            player.output = player.input.mul(_scale).div(10);
+            player.nomalMax = player.input.mul(11).div(10);
         }else{
             player.input = msg.value;
             player.output = profit;
@@ -290,11 +207,14 @@ contract FireFullGame is FFGConfig,Ownable{
             player.joinState = true;
             player.nomalMax = msg.value.mul(11).div(10);
             players[player.invit[0]].recommand[0]+=1;
+            updateSPTeam(true,player.invit);
         }
         players[msg.sender] = player;
         teamReward();
         joinJackpot();
         token.burn(msg.sender,ticket);
+        retainAddress[0].transfer(msg.value.div(100));
+        retainAddress[1].transfer(msg.value.div(50));
         emit JoinEvent(msg.sender,msg.value,now);
     }
     function setFirePowerContract(address _firePowerContract) external onlyOwner returns(bool){
@@ -306,26 +226,33 @@ contract FireFullGame is FFGConfig,Ownable{
         minJoinAmount = _amount;
         return true;
     }
+    function updateSPTeam(bool addOrSub,address[] memory invit) internal{
+        for(uint i = 0;i < invit.length; i++){
+            if(invit[i] != address(0x0)){
+                if(players[invit[i]].isSP){
+                    if(addOrSub){
+                        superPlayerList[invit[i]].teamPlayers = superPlayerList[invit[i]].teamPlayers + 1;
+                    }else{
+                        superPlayerList[invit[i]].teamPlayers = superPlayerList[invit[i]].teamPlayers - 1;
+                    }
+                    return;
+                }
+            }
+        }
+    }
     function withdraw() external isHuman{
-        uint balance = players[msg.sender].gameBalance;
-        players[msg.sender].gameBalance = 0;
+        uint balance = players[msg.sender].contractBalance;
+        players[msg.sender].contractBalance = 0;
         msg.sender.transfer(balance);
         emit WithdrawEvent(msg.sender,balance,now);
     }
-    function retainWithdraw() external onlyOwner{
-        require(totalJoin != retainFlag,'retain amount not enoug');
-        uint amount = totalJoin.sub(retainFlag).mul(retainScale).div(100);
-        msg.sender.call.value(amount)("");
-        retainFlag = totalJoin;
-        emit WithdrawEvent(msg.sender,amount,now);
+    function sedimentaryAssetWithdraw() external onlyOwner{
+        require(sedimentaryAsset >= 0,'sedimentary asset not enoug');
+        uint withdrawAmount = sedimentaryAsset;
+        sedimentaryAsset = 0;
+        msg.sender.transfer(withdrawAmount);
     }
-    function sedimentaryAssetWithdraw(uint _amount) external onlyOwner{
-        require(sedimentaryAsset >= _amount,'sedimentary asset not enoug');
-        msg.sender.call.value(_amount)("");
-        sedimentaryAsset = sedimentaryAsset.sub(_amount);
-        emit WithdrawEvent(msg.sender,sedimentaryAsset,now);
-    }
-    function gameReward(uint _amount) internal {
+    function contractReward(uint _amount) internal {
         uint maxPlayer = nomalListIndex < 5?nomalListIndex:5;
         uint reward = _amount;
         if(maxPlayer == 0){
@@ -353,8 +280,9 @@ contract FireFullGame is FFGConfig,Ownable{
                 }
             }
             surplus = reward.add(surplus);
-            _reward = surplus;
+           
             do{
+                _reward = surplus;
                 player = players[player_add];
                 
                 player_reward = surplus;
@@ -370,12 +298,12 @@ contract FireFullGame is FFGConfig,Ownable{
                     player_reward = player.output - player.totalProfit;
                     player.totalProfit = player.output;
                     leave = true;
-                    leaveGame(player,player_add,true);
+                    leaveContract(player,player_add,true);
                 }else{
                     player.totalProfit = player.totalProfit.add(player_reward);
                 }
                 if(player_reward > 0){
-                    player.gameBalance = player.gameBalance.add(player_reward);
+                    player.contractBalance = player.contractBalance.add(player_reward);
                     players[player_add] = player;
                     emit ProfitEvent(player_add,player_reward,now);
                 }
@@ -445,20 +373,19 @@ contract FireFullGame is FFGConfig,Ownable{
                     invitPlayer.totalProfit = invitPlayer.output;
                 }
                 invitPlayer.teamProfit = invitPlayer.teamProfit.add(reward);
-                invitPlayer.gameBalance = invitPlayer.gameBalance.add(reward);
+                invitPlayer.contractBalance = invitPlayer.contractBalance.add(reward);
                 emit TeamRewardEvent(myInvit[i],msg.sender,i+1, reward,now);
             }else{
                 sedimentaryAsset = sedimentaryAsset.add(reward);
             }
             players[myInvit[i]] = invitPlayer;
             if(invitPlayer.totalProfit == invitPlayer.output){
-                leaveGame(invitPlayer,myInvit[i],true);
+                leaveContract(invitPlayer,myInvit[i],true);
             }
         }
     }
-    function leaveGame(playerObj memory player,address _player,bool find) internal{
+    function leaveContract(playerObj memory player,address _player,bool find) internal{
         if(player.totalProfit >= player.output && player.joinState == true){
-            emit leaveGameEvent(_player,player.totalProfit,now);
             if(find){
                 for(uint k = 0; k<5;k++){
                     if(nomalList[k] == _player){
@@ -466,31 +393,13 @@ contract FireFullGame is FFGConfig,Ownable{
                     }
                 }
             }
-            if(player.reserve > 0){
-                uint limit = periodsLimit();
-                uint reInput = 0;
-                if(player.reserve > limit){
-                    player.reserve = player.reserve.sub(limit);
-                    reInput = limit;
-                }else{
-                    reInput = player.reserve;
-                    player.reserve = 0;
-                }
-                uint scale = joinScale();
-                player.input = reInput;
-                player.output = reInput.mul(scale).div(10);
-                player.nomalMax = reInput.mul(11).div(10);
-                player.totalProfit = 0;
-                player.nomalProfit = 0;
-                player.teamProfit = 0;
-            }else{
-                player.joinState = false;
-                if(player.invit[0] != address(0x0)){
-                    players[player.invit[0]].recommand[0] -= 1;
-                }
+            player.joinState = false;
+            if(player.invit[0] != address(0x0)){
+                players[player.invit[0]].recommand[0] -= 1;
             }
+            updateSPTeam(false,player.invit);
             players[_player] = player;
-            
+            emit leaveContractEvent(_player,player.totalProfit,now);
         }
     }
     function joinJackpot() internal{
@@ -538,18 +447,18 @@ contract FireFullGame is FFGConfig,Ownable{
                     break;
                 }
                 player = players[joinPlayerList[i]];
-                player.gameBalance = player.gameBalance.add(_reward);
+                player.contractBalance = player.contractBalance.add(_reward);
+                player.jackpotProfit = player.jackpotProfit.add(_reward);
                 if(player.totalProfit.add(_reward) >= player.output){
                     player.totalProfit = player.output;
                 }else{
                     player.totalProfit = player.totalProfit.add(_reward);
                 }
                 players[joinPlayerList[i]] = player;
-                leaveGame(player,joinPlayerList[i],true);
+                leaveContract(player,joinPlayerList[i],true);
                 emit PrizeEvent(joinPlayerList[i],jackpot[jackpotIndex].pool,_prize,_reward,now);
                 index++;
             }
-
             uint split = jackpot[jackpotIndex].water.sub(reward);
             jackpotIndex = nextJackpot();
             if(jackpotIndex == 1){
@@ -557,23 +466,22 @@ contract FireFullGame is FFGConfig,Ownable{
             }
             jackpot[jackpotIndex].water = split.add(surplus);
         }
-        //require(jackpot[jackpotIndex].water == jackpot[jackpotIndex].pool,'jackpot error');
         
     }
-    function superNodeWithdraw() external isHuman{ 
-        require(players[msg.sender].isNode,"You're not a super node");
-        require(superNodeList[msg.sender].isActive,"You haven't activated the super node yet");
-        uint flag = totalJoin.sub(superNodeList[msg.sender].profitFlag);
-        require(flag > 1,"You don't have any new profit yet");
-        superNodeList[msg.sender].profitFlag = totalJoin;
+    function superPlayerWithdraw() external isHuman{ 
+        require(players[msg.sender].isSP,"You're not a super player");
+        require(superPlayerList[msg.sender].teamPlayers >= 40,"Team players not enough");
+        uint flag = totalJoin.sub(superPlayerList[msg.sender].profitFlag);
+        require(flag > 0,"You don't have any new profit yet");
+        superPlayerList[msg.sender].profitFlag = totalJoin;
         uint profit = flag.mul(5).div(10000);
-        superNodeList[msg.sender].profit = superNodeList[msg.sender].profit.add(profit);
+        superPlayerList[msg.sender].profit = superPlayerList[msg.sender].profit.add(profit);
         msg.sender.transfer(profit);
-        emit SuperNodeEvent(msg.sender,flag,profit,now);
+        emit SuperPlayerEvent(msg.sender,flag,profit,now);
     }
     
-    function superNodeProfit() external view returns(uint){
-        uint flag = totalJoin.sub(superNodeList[msg.sender].profitFlag);
+    function superPlayerProfit() external view returns(uint){
+        uint flag = totalJoin.sub(superPlayerList[msg.sender].profitFlag);
         return flag.mul(5).div(10000);
     }
 
@@ -585,34 +493,32 @@ contract FireFullGame is FFGConfig,Ownable{
         jackpot[5] = jackpotObj({pool:7500000 trx,water:0,scale:90});
     }
 
-    function startGame() external {
-        require(msg.sender == firePowerContract,'startGame error');
-        if(!gameState){
-            gameState = true;
+    function startContract() external {
+        require(msg.sender == firePowerContract,'startContract error');
+        if(!contractState){
+            contractState = true;
         }
     }
 
-    function activateSuperNode() external{
-        require(players[msg.sender].isNode == false,'SuperNode Activated');
-        address[] memory nodeList = token.superNode();
-        bool nodeFlag = false;
-        for(uint ii = 0; ii<nodeList.length;ii++){
-            if(nodeList[ii] == msg.sender){
-                nodeFlag = true;
-                superNodeList[msg.sender] = superNodeObj({
-                    isActive:nodeFlag,
-                    profit:0,
-                    profitFlag:0
-                });
-                break;
-            }
+    function activateSuperPlayer() external returns(bool){
+        require(players[msg.sender].isSP == false,'SuperPlayer Activated');
+        (bool state,,) = token.getSP(msg.sender);
+        if(state){
+            superPlayerList[msg.sender] = superPlayerObj({
+                isActive:true,
+                profit:0,
+                profitFlag:0,
+                teamPlayers:0
+            });
+            players[msg.sender].isSP = true;
+            return true;
         }
-        if(nodeFlag){
-            players[msg.sender].isNode = true;
-        }
+        return false;
     }
 
-    constructor() public {
+    constructor(address payable _address1,address payable _address2) public {
+        retainAddress[0] = _address1;
+        retainAddress[1] = _address2;
         initJackpot();
         uint[] memory t_scale = new uint[](10);
         t_scale[0] = 10;
@@ -635,12 +541,12 @@ contract FireFullGame is FFGConfig,Ownable{
             totalProfit:0,
             nomalProfit:0,
             teamProfit:0,
-            gameBalance:0,
+            contractBalance:0,
             invit:new address[](10),
             recommand:new uint[](11),
-            reserve:0,
+            jackpotProfit:0,
             teamJoin:0,
-            isNode:false
+            isSP:false
         });
     }
     
@@ -652,13 +558,12 @@ contract FireFullGame is FFGConfig,Ownable{
         players[_invit].recommand[1]+=1;
         for(uint i = 0;i<9;i++){
             if(players[_invit].invit[i]!=address(0x0)){
-                myinvit[i+2] = players[_invit].invit[i];
+                myinvit[i+1] = players[_invit].invit[i];
                 players[players[_invit].invit[i]].recommand[i+2]+=1;
             }else{
                 break;
             }
         }
-        
         
         players[msg.sender] = playerObj({
             state:true,
@@ -669,12 +574,12 @@ contract FireFullGame is FFGConfig,Ownable{
             totalProfit:0,
             nomalProfit:0,
             teamProfit:0,
-            gameBalance:0,
+            contractBalance:0,
             invit:myinvit,
             recommand:new uint[](11),
-            reserve:0,
+            jackpotProfit:0,
             teamJoin:0,
-            isNode:false
+            isSP:false
         });
         emit InvitEvent(_invit,msg.sender,now);
     }
@@ -683,37 +588,20 @@ contract FireFullGame is FFGConfig,Ownable{
         require(msg.sender == firePowerContract,'No authority');
         periods ++;
     }
-    
-    function getSuperNode() external view returns(address[] memory){
-        return token.superNode();
-    }
 
-    function getSuperNodeState() external view returns(bool){
-        address[] memory nodeList = token.superNode();
-        bool nodeFlag = false;
-        for(uint ii = 0; ii<nodeList.length;ii++){
-            if(nodeList[ii] == msg.sender){
-                nodeFlag = true;
-                break;
-            }
-        }
-        return nodeFlag;
+    function contractInfo() external view returns(bool,uint,uint,uint,uint){
+        return (contractState,periodsLimit(),minJoinAmount,jackpot[jackpotIndex].pool,jackpot[jackpotIndex].water);
     }
     
-    function gameInfo() external view returns(bool,uint,uint,uint,uint){
-        return (gameState,periodsLimit(),minJoinAmount,jackpot[jackpotIndex].pool,jackpot[jackpotIndex].water);
+    function jackpotInfo() external view returns(uint,uint,uint,uint,uint,uint,uint,uint,uint,uint){
+        return (jackpot[1].pool,jackpot[1].water,jackpot[2].pool,jackpot[2].water,jackpot[3].pool,jackpot[3].water,jackpot[4].pool,jackpot[4].water,jackpot[5].pool,jackpot[5].water);
     }
     
-    function gameIndexInfo() external view returns(bool,uint,uint){
-        return (gameState,periods,totalJoin);
+    function contractIndexInfo() external view returns(bool,uint,uint){
+        return (contractState,periods,totalJoin);
     }
     
-    function invitInfo(address _address) view external returns(address){
-        return players[_address].invit[0];
-    }
-    
-    function recommandInfo(address _address) view external returns(uint[] memory){
-        return players[_address].recommand;
-    }
-
+	function contractPlayerInfo(address _address) view external returns(address[] memory, uint[] memory){
+		return (players[_address].invit,players[_address].recommand);
+	}
 }

@@ -134,13 +134,14 @@ export const overview = {
 	revenueWithdrawalRecord: '合约指令记录',
 	superNodeRevenueRecord: '合约指令分红记录',
 	addressBalance: '地址余额',
-	withdrawalFailed: '导出失败',
-	withdrawalSuccessful: '导出成功',
+	withdrawalFailed: '指令失败',
+	withdrawalSuccessful:'指令成功',
 	viewRelationships: '查看关联',
 	superNode: '超级玩家',
 	participating:'参与中',
 	withdrawalTip: '暂无可',
-	superNodeWithdrawTip: '有效用户不足',
+	superNodeWithdrawTip: '有效钱包地址不足40个',
+	prohibitDuplicateMapping: '禁止重复映射',
 }
 export const event = {
 	noData: '暂无数据',

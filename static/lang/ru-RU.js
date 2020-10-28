@@ -147,6 +147,7 @@ export const overview = {
 	viewRelationships: 'отношение',
 	superNode: 'суперузел',
 	participating:'Участие',
+	prohibitDuplicateMapping: 'отображение запрета повторения',
 }
 export const event = {
 	noData: 'Нет данных',

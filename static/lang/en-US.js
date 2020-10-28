@@ -141,6 +141,7 @@ export const overview = {
 	superNode: 'Super Node',
 	participating:'Participating',
 	withdrawalTip: 'No Income Can Be Derived',
+	prohibitDuplicateMapping: 'Prohibit Duplicate Mapping',
 }
 export const event = {
 	noData: 'No Data',

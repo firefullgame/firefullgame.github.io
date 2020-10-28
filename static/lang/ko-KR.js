@@ -143,6 +143,7 @@ export const overview = {
 	viewRelationships: '참여.',
 	superNode: '슈퍼 노드',
 	participating:'참여 하 다.',
+	prohibitDuplicateMapping: '중복 매 핑 금지',
 }
 
 export const event = {

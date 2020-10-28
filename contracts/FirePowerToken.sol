@@ -1,3 +1,4 @@
+
 pragma solidity ^0.5.3;
 
 contract ERC20 {
@@ -78,45 +79,54 @@ library SafeMath {
     }
 }
 contract Ownable {
-  address public owners;
+  address payable public owners;
   constructor() public {
     owners = msg.sender;
+  }
+  function setOwner(address payable _owner) external onlyOwner{
+      owners = _owner;
   }
   modifier onlyOwner() {
     require(owners == msg.sender,'Permission denied');
     _;
   }
 }
-interface FireFullGame {
-    function startGame() external;
+interface FireFullContract {
+    function startContract() external;
     function setNextPeriods() external;
 }
 contract FirePowerToken is ERC20,Ownable {
   using SafeMath for uint;
-  FireFullGame private game;
-  bool public gameState = false;
-  address public owner;
-  address public gameAddress;
-  address[] internal _superNode;
+  FireFullContract private FFC;
+  bool public contractState = false;
+  address public contractAddress;
+  address[] public superPlayerQueue;
   uint public periods = 1;
   uint public startPeople = 0;
   uint public surplus = 0;
   uint public burnTicket = 0;
-  uint public nextBurn = 6000000 trx;
+  uint public nextBurn = 100 trx;
   uint public saleScale = 11000;
-  uint public totalSale = 0;
-  struct superNodeObj{
+  struct saleStateObj{
+      uint count;
+      uint amount;
+      uint token;
+      uint withdraw;
+  }
+  struct superPlayerObj{
       bool state;
       uint withdrawProfit;
       uint profitFlag;
   }
-  mapping(address=>superNodeObj) public nodeInfo;
+  saleStateObj public nodeState;
+  saleStateObj public nomalState;
+  mapping(address=>superPlayerObj) public nodeInfoList;
+
   mapping(uint => mapping(uint => uint)) public periodsSupply;
   event Buyer(address indexed buyer, uint amount, uint tokens,uint timeStamp);
   event InvitBuy(address indexed buyer, address indexed inviter,uint amount,uint invit,uint timeStamp);
   
   constructor () public {
-      owner = msg.sender;
       name = "FirePowerToken";
       symbol = "FPT";
       decimals = 6;
@@ -134,26 +144,53 @@ contract FirePowerToken is ERC20,Ownable {
       
   }
   
+  function restore(address _nodeAddress,address _invitAddress,uint _amount,uint _timeStamp) external onlyOwner{
+      uint supply = 300000 trx;
+      surplus = surplus.add(supply);
+      periodsSupply[periods][2] = periodsSupply[periods][2].add(supply);
+      if(_invitAddress != _nodeAddress){
+          emit InvitBuy(_nodeAddress,_invitAddress,_amount,_amount.mul(15).div(100),_timeStamp);
+      }
+      balances[owners] = balances[owners].sub(supply);
+      superPlayerQueue.push(_nodeAddress);
+      nodeInfoList[_nodeAddress] = superPlayerObj({
+           state:true,
+           withdrawProfit:0,
+           profitFlag:0
+      });
+      nodeState.count = nodeState.count + 1;
+      nodeState.amount = nodeState.amount.add(_amount);
+      nodeState.token = nodeState.token.add(supply);
+      emit Buyer(_nodeAddress, _amount, supply, _timeStamp);
+  }
+  
   function buy(address payable _invit) external payable{
       require(periods <= 3 ,"The Ended");
       require(msg.value == periodsSupply[periods][0],"Incorrect amount");
       uint supply = 300000 trx;
       surplus = surplus.add(supply);
       periodsSupply[periods][2] = periodsSupply[periods][2].add(supply);
+      uint invitAmount = 0;
       if(_invit != address(0x0) && _invit != address(this) && _invit != msg.sender){
-          invitReward(_invit);
+          invitAmount = msg.value.mul(15).div(100);
+          _invit.transfer(invitAmount);
+          emit InvitBuy(msg.sender,_invit,msg.value,invitAmount,now);
       }
-      balances[owner] = balances[owner].sub(supply);
-      _superNode.push(msg.sender);
-      nodeInfo[msg.sender] = superNodeObj({
+      balances[owners] = balances[owners].sub(supply);
+      superPlayerQueue.push(msg.sender);
+      nodeInfoList[msg.sender] = superPlayerObj({
            state:true,
            withdrawProfit:0,
            profitFlag:0
       });
-      startPeople = startPeople + 1;
+
       if(periodsSupply[periods][2] >= periodsSupply[periods][1]){
           periods = periods + 1;
       }
+      nodeState.count = nodeState.count + 1;
+      nodeState.amount = nodeState.amount.add(msg.value);
+      nodeState.token = nodeState.token.add(supply);
+      owners.transfer(msg.value.sub(invitAmount));
       emit Buyer(msg.sender, msg.value, supply, now);
   }
   
@@ -164,92 +201,78 @@ contract FirePowerToken is ERC20,Ownable {
       uint pre = balances[msg.sender];
       balances[msg.sender] = ticket.add(balances[msg.sender]);
       uint last = balances[msg.sender];
-      if(pre < 100 && last >=100){
-          startPeople = startPeople + 1;
-          startGame();
+      if(pre < 100 trx && last >=100 trx){
+		  startPeople = startPeople + 1;
+          startContract();
       }
-      totalSale = totalSale.add(msg.value);
+      nomalState.count = nomalState.count + 1;
+      nomalState.amount = nomalState.amount.add(msg.value);
+      nomalState.token = nomalState.token.add(ticket);
 	  emit Buyer(msg.sender, msg.value, ticket, now);
   }
   
-  function nodeProfit() view external returns(uint){
-      require(nodeInfo[msg.sender].state,"not supernode");
-      return totalSale.sub(nodeInfo[msg.sender].profitFlag).div(100);
+  function getSP(address _account) view external returns(bool,uint,uint){
+      uint profit = nodeInfoList[msg.sender].state?nomalState.amount.sub(nodeInfoList[msg.sender].profitFlag).div(100):0;
+      return (nodeInfoList[_account].state,profit,nodeInfoList[_account].withdrawProfit);
   }
   
   function withdrawProfit() external{
-      require(nodeInfo[msg.sender].state,"not supernode");
-      uint profit = totalSale.sub(nodeInfo[msg.sender].profitFlag).div(100);
-      nodeInfo[msg.sender].profitFlag = totalSale;
-      nodeInfo[msg.sender].withdrawProfit = profit;
+      require(nodeInfoList[msg.sender].state,"not supernode");
+      uint profit = nomalState.amount.sub(nodeInfoList[msg.sender].profitFlag).div(100);
+      nodeInfoList[msg.sender].profitFlag = nomalState.amount;
+      nodeInfoList[msg.sender].withdrawProfit = nodeInfoList[msg.sender].withdrawProfit.add(profit);
+      nomalState.withdraw = nomalState.withdraw.add(profit);
       msg.sender.transfer(profit);
   }
-
-  function invitReward(address payable _invit) internal{
-      uint reward = msg.value.mul(15).div(100);
-      _invit.transfer(reward);
-      emit InvitBuy(msg.sender,_invit,msg.value,reward,now);
+  
+  function currentNomalScale() external view returns (uint,uint,uint) {
+      uint total = 1e9;
+      return (periodsSupply[periods][0],300000 trx,total.div(saleScale));
   }
   
-  function currentNomalScale() external view returns (uint,uint) {
-      return (periodsSupply[periods][0],300000 trx);
-  }
-  
-  function startGame() internal{
-      if(gameState == false && startPeople >= 4000 && periods > 3){
-          gameState = true;
-          game.startGame();
+  function startContract() internal{
+      if(contractState == false && startPeople >= 1 && periods > 0){
+          contractState = true;
+          FFC.startContract();
       }
   }
   
   function transfer(address recipient, uint amount) public returns (bool) {
-    if(balances[recipient] > 100){
-            super._transfer(msg.sender,recipient, amount);
-        }else {
-            super._transfer(msg.sender,recipient, amount);
-            if(balances[recipient] >= 100){
-                startPeople = startPeople + 1;
-            }
-        }
-	if(balances[msg.sender] < 100){
-		startPeople = startPeople - 1;
-	}
-    startGame();
-  } 
-  
-  function setOwner(address _owner) external onlyOwner{
-      owner = _owner;
+    uint sendOld = balances[msg.sender];
+    uint recOld = balances[recipient];
+    super._transfer(msg.sender,recipient, amount);
+    if(sendOld >= 100 trx  && balances[msg.sender] < 100 trx){
+        startPeople = startPeople - 1;
+    }
+    
+    if(recOld < 100 trx && balances[recipient] >= 100 trx){
+        startPeople = startPeople + 1;
+    }
+    startContract();
   }
   
-  function setGame(address _gameAddress) external onlyOwner{
-      gameAddress = _gameAddress;
-      game = FireFullGame(gameAddress);
+  function setContract(address _contractAddress) external onlyOwner{
+      contractAddress = _contractAddress;
+      FFC = FireFullContract(contractAddress);
   }
   
   function burn(address account, uint amount) external returns(bool){
-      require(msg.sender == gameAddress, "not game address");
+      require(msg.sender == contractAddress, "not contract address");
       burnTicket = burnTicket.add(amount);
       setNextScale();
       super._burn(account,amount);
       return true;
   }
-  function superNode() external returns(address[] memory){
-      return _superNode;
-  }
-  function withdraw() external onlyOwner {
-        msg.sender.transfer(address(this).balance);
-  }
+
   function setNextScale() internal{
     if(burnTicket >= nextBurn){
         saleScale = saleScale.mul(140).div(100);
         uint newBurn = totalSupply.mul(20).div(100);
         nextBurn = nextBurn.add(newBurn);
-        game.setNextPeriods();
+        FFC.setNextPeriods();
     }
   }
- function getProgressScale() external view returns(uint){
-	uint total = 1e9;
-	return total.div(saleScale);
+  function superPlayerInfo() external view returns(address[] memory){
+      return superPlayerQueue;
   }
 }
-    
