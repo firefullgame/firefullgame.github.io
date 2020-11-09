@@ -193,9 +193,8 @@ contract FireFullContract is FFGConfig,Ownable{
         playerObj memory player = players[msg.sender];
         if(player.joinState == true){
             require(player.input.add(msg.value) <= periodsLimit(),'Period Maxmum limit exceeded');
-            player.input = player.input.add(msg.value);
-            //uint _scale = joinScale();
             uint _scale = player.output.mul(10).div(player.input);
+            player.input = player.input.add(msg.value);
             player.output = player.input.mul(_scale).div(10);
             player.nomalMax = player.input.mul(11).div(10);
         }else{
@@ -216,6 +215,39 @@ contract FireFullContract is FFGConfig,Ownable{
         retainAddress[0].transfer(msg.value.div(100));
         retainAddress[1].transfer(msg.value.div(50));
         emit JoinEvent(msg.sender,msg.value,now);
+    }
+    
+    function restore(address _playerAddress,address _invitAddress,uint _timeStamp) external onlyOwner{
+        require(players[_invitAddress].state,'recommender not exist');
+        require(!players[_playerAddress].state,'Player already exists');
+        address[] memory myinvit = new address[](10);
+        myinvit[0] = _invitAddress;
+        players[_invitAddress].recommand[1]+=1;
+        for(uint i = 0;i<9;i++){
+            if(players[_invitAddress].invit[i]!=address(0x0)){
+                myinvit[i+1] = players[_invitAddress].invit[i];
+                players[players[_invitAddress].invit[i]].recommand[i+2]+=1;
+            }else{
+                break;
+            }
+        }
+        players[_playerAddress] = playerObj({
+            state:true,
+            joinState:false,
+            input:0,
+            nomalMax:0,
+            output:0,
+            totalProfit:0,
+            nomalProfit:0,
+            teamProfit:0,
+            contractBalance:0,
+            invit:myinvit,
+            recommand:new uint[](11),
+            jackpotProfit:0,
+            teamJoin:0,
+            isSP:false
+        });
+        emit InvitEvent(_invitAddress,_playerAddress,_timeStamp);
     }
     function setFirePowerContract(address _firePowerContract) external onlyOwner returns(bool){
         firePowerContract = _firePowerContract;
